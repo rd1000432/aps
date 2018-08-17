@@ -48,6 +48,7 @@ const appRoutes: Routes = [
       { path: "data-center", component: DataCenterComponent },
       { path: "project-overview", component: ProjectOverviewComponent },
       { path: "project-single", component: ProjectSingleComponent },
+      { path: "project-single/:id", component: ProjectSingleComponent },
       { path: "project-create", component: ProjectCreateComponent },
       { path: "commenter", component: CommenterComponent }
 
