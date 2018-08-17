@@ -60,6 +60,7 @@
 
 } */
 
-/* #tools_left {
-  width: 0;
-} */
+#tools_left {
+  left: 242px;
+  z-index: 20;
+}
