@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12 projects_content_section">
     <div class="row">
-      <div class="side_bar col-md-2">
+      <!-- <div class="side_bar col-md-2">
         <div>
           <ul>
             <li>
@@ -54,53 +54,53 @@
               </div>
             </li>
           </ul>
-          <!-- new set -->
-          <ul class="side_bar-filter-status">
-            <li>
-              <div class="side_bar-checkbox-header">
-                <label class="side_bar-checkbox-label">
+
+      <ul class="side_bar-filter-status">
+        <li>
+          <div class="side_bar-checkbox-header">
+            <label class="side_bar-checkbox-label">
                   <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> Status
                 </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
+          </div>
+        </li>
+        <li>
+          <div class="side_bar-checkbox-subheader">
+            <label class="side_bar-checkbox-label">
                   <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
                 </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
+          </div>
+        </li>
+        <li>
+          <div class="side_bar-checkbox-subheader">
+            <label class="side_bar-checkbox-label">
                   <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
                 </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
+          </div>
+        </li>
+        <li>
+          <div class="side_bar-checkbox-subheader">
+            <label class="side_bar-checkbox-label">
                   <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
                 </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
+          </div>
+        </li>
+        <li>
+          <div class="side_bar-checkbox-subheader">
+            <label class="side_bar-checkbox-label">
                   <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
                 </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
+          </div>
+        </li>
+        <li>
+          <div class="side_bar-checkbox-subheader">
+            <label class="side_bar-checkbox-label">
                   <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
                 </label>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>  -->
 
       <div class="col-md-10">
         <div class="brand_content_section">
@@ -112,7 +112,6 @@
               <a href="/project-create"><label>Create</label></a>
             </button>
           </div>
-
 
           <div *ngFor="let project of projects" class="brand_content_section--list-data">
             <div class="content_section_list">
@@ -126,12 +125,12 @@
                     <span>{{project.id}}</span>
                   </div>
                   <div class="project_description_list">
-                    <label>Creation Date:</label>
+                    <label>Start Date:</label>
                     <span>{{project.init_date}}</span>
-                  </div>                  
+                  </div>
                   <div class="project_description_list">
                     <label>Brand:</label>
-                    <span>{{project.brand_id}}</span>
+                    <span>{{project.brandname}}</span>
                   </div>
                   <div class="project_description_list">
                     <label>Description:</label>
@@ -139,20 +138,20 @@
                   </div>
                   <div class="project_description_list">
                     <label>Product:</label>
-                    <span>{{project.product_id}}</span>
+                    <span>{{project.productname}}</span>
                   </div>
                   <div class="project_description_list">
                     <label>Organisation:</label>
-                    <span>{{project.organisation_id}}</span>
+                    <span>{{project.name}}</span>
                   </div>
                 </div>
               </div>
               <div class="content_section_list--meter">
-                <div class="content_section_list--meterdiagram">
+                <!-- <div class="content_section_list--meterdiagram">
                   <img src="../../assets/images/meter.png" width="165px" alt="meter">
-                </div>
+                </div> -->
                 <div class="content_section_list-version">
-                  <button>View Version
+                  <button>Open Project
                     <i class="zmdi zmdi-caret-right"></i>
                   </button>
                 </div>

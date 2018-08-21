@@ -4,6 +4,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: NationalCodes-Europe;
   src: url("../../src/assets/fonts/NationalCodes-Europe.otf");
@@ -59,11 +60,8 @@
   }
 }
 
-
-
-
-
 /* =========page wrapper and card - center portion====== */
+
 .page-wrapper {
   background: #f2f4f8;
 }
@@ -85,12 +83,9 @@
   padding-bottom: 60px;
 }
 
-
-
-
 /* ======card===== */
-.card-no-border .left-sidebar,
-.card-no-border .sidebar-nav {
+
+.card-no-border .left-sidebar, .card-no-border .sidebar-nav {
   background: #272c33;
 }
 
@@ -99,6 +94,7 @@
 }
 
 /*Card-noborders*/
+
 .card-no-border .card {
   border: 0px;
 }
@@ -116,12 +112,11 @@
   box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
 }
 
-.card-no-border .left-sidebar,
-.card-no-border .sidebar-nav {
+.card-no-border .left-sidebar, .card-no-border .sidebar-nav {
   background: #e5edef;
 }
 
-.card-no-border .sidebar-nav > ul > li > a.active {
+.card-no-border .sidebar-nav>ul>li>a.active {
   background: #f2f4f8;
 }
 
@@ -130,11 +125,7 @@
   box-shadow: none;
 }
 
-.card-outline-danger,
-.card-outline-info,
-.card-outline-warning,
-.card-outline-success,
-.card-outline-primary {
+.card-outline-danger, .card-outline-info, .card-outline-warning, .card-outline-success, .card-outline-primary {
   background: #ffffff;
 }
 
@@ -153,19 +144,18 @@
 /*******************
  Card title
 *******************/
+
 .card {
   margin-bottom: 30px;
 }
+
 .card .card-subtitle {
   font-weight: 300;
   margin-bottom: 15px;
   color: #90a4ae;
 }
 
-.card-inverse .card-blockquote .blockquote-footer,
-.card-inverse .card-link,
-.card-inverse .card-subtitle,
-.card-inverse .card-text {
+.card-inverse .card-blockquote .blockquote-footer, .card-inverse .card-link, .card-inverse .card-subtitle, .card-inverse .card-text {
   color: rgba(255, 255, 255, 0.65);
 }
 
@@ -207,9 +197,11 @@
 /*==============================================================
  Cards page
  ============================================================== */
+
 .card-actions {
   float: right;
 }
+
 .card-actions a {
   cursor: pointer;
   color: #54667a;
@@ -217,6 +209,7 @@
   padding-left: 7px;
   font-size: 13px;
 }
+
 .card-actions a:hover {
   opacity: 1;
 }
@@ -244,6 +237,7 @@
 .card-outline-info {
   border-color: #009efb;
 }
+
 .card-outline-info .card-header {
   background: #009efb;
   border-color: #009efb;
@@ -252,6 +246,7 @@
 .card-outline-inverse {
   border-color: #2f3d4a;
 }
+
 .card-outline-inverse .card-header {
   background: #2f3d4a;
   border-color: #2f3d4a;
@@ -260,6 +255,7 @@
 .card-outline-warning {
   border-color: #ffbc34;
 }
+
 .card-outline-warning .card-header {
   background: #ffbc34;
   border-color: #ffbc34;
@@ -268,6 +264,7 @@
 .card-outline-success {
   border-color: #55ce63;
 }
+
 .card-outline-success .card-header {
   background: #55ce63;
   border-color: #55ce63;
@@ -276,6 +273,7 @@
 .card-outline-danger {
   border-color: #f62d51;
 }
+
 .card-outline-danger .card-header {
   background: #f62d51;
   border-color: #f62d51;
@@ -284,6 +282,7 @@
 .card-outline-primary {
   border-color: #7460ee;
 }
+
 .card-outline-primary .card-header {
   background: #7460ee;
   border-color: #7460ee;
@@ -292,60 +291,71 @@
 .card {
   margin-bottom: 0px;
 }
+
 /*******************
 FAQs Page
 ******************/
+
 .minimal-faq .card {
   border: 0px;
 }
+
 .minimal-faq .card .card-header {
   background: #ffffff;
   padding: 20px 0;
   margin-top: 10px;
 }
+
 .minimal-faq .card .card-block {
   padding: 15px 0px;
 }
 
-.card-inverse .card-blockquote,
-.card-inverse .card-footer,
-.card-inverse .card-header,
-.card-inverse .card-title {
+.card-inverse .card-blockquote, .card-inverse .card-footer, .card-inverse .card-header, .card-inverse .card-title {
   color: #ffffff;
 }
 
 /*******************/
+
 /*Chat widget*/
+
 /*******************/
+
 .chat-list {
   margin: 0px;
   padding: 0px;
 }
+
 .chat-list li {
   list-style: none;
   margin-top: 30px;
 }
+
 .chat-list li .chat-img {
   display: inline-block;
   width: 45px;
   vertical-align: top;
 }
+
 .chat-list li .chat-img img {
   width: 45px;
   border-radius: 100%;
 }
+
 .chat-list li .chat-content {
   width: calc(100% - 140px);
   display: inline-block;
   padding-left: 15px;
 }
+
 .chat-list li .chat-content h5 {
   color: #90a4ae;
 }
+
 .chat-list li .chat-content .box {
   display: inline-block;
   margin-bottom: 10px;
 }
+
 .chat-list li .chat-time {
   display: inline-block;
   text-align: right;
@@ -353,30 +363,39 @@ FAQs Page
   font-size: 13px;
   color: #90a4ae;
 }
+
 .chat-list li.odd .chat-content {
   text-align: right;
   width: calc(100% - 90px);
 }
+
 .chat-list li.odd .box {
   clear: both;
 }
-.chat-list li.odd + .odd {
+
+.chat-list li.odd+.odd {
   margin-top: 0px;
 }
+
 .chat-list li.reverse {
   text-align: right;
 }
+
 .chat-list li.reverse .chat-time {
   text-align: left;
 }
+
 .chat-list li.reverse .chat-content {
   padding-left: 0px;
   padding-right: 15px;
 }
 
 /*******************/
+
 /*Chat widget*/
+
 /*******************/
+
 .message-box ul li .drop-title {
   font-weight: 500;
   padding: 11px 20px 15px;
@@ -391,30 +410,37 @@ FAQs Page
 .message-box .message-widget {
   position: relative;
 }
+
 .message-box .message-widget a {
   border-bottom: 1px solid rgba(120, 130, 140, 0.13);
   display: block;
   text-decoration: none;
   padding: 9px 15px;
 }
+
 .message-box .message-widget a:hover {
   background: #f2f4f8;
 }
+
 .message-box .message-widget a:last-child {
   border-bottom: 0px;
 }
+
 .message-box .message-widget a div {
   white-space: normal;
 }
+
 .message-box .message-widget a .user-img {
   width: 45px;
   position: relative;
   display: inline-block;
   margin: 0 10px 15px 0;
 }
+
 .message-box .message-widget a .user-img img {
   width: 100%;
 }
+
 .message-box .message-widget a .user-img .profile-status {
   border: 2px solid #ffffff;
   border-radius: 50%;
@@ -425,28 +451,34 @@ FAQs Page
   top: -1px;
   width: 10px;
 }
+
 .message-box .message-widget a .user-img .online {
   background: #55ce63;
 }
+
 .message-box .message-widget a .user-img .busy {
   background: #f62d51;
 }
+
 .message-box .message-widget a .user-img .away {
   background: #ffbc34;
 }
+
 .message-box .message-widget a .user-img .offline {
   background: #ffbc34;
 }
+
 .message-box .message-widget a .mail-contnet {
   display: inline-block;
   width: 75%;
   vertical-align: middle;
 }
+
 .message-box .message-widget a .mail-contnet h5 {
   margin: 5px 0px 0;
 }
-.message-box .message-widget a .mail-contnet .mail-desc,
-.message-box .message-widget a .mail-contnet .time {
+
+.message-box .message-widget a .mail-contnet .mail-desc, .message-box .message-widget a .mail-contnet .time {
   font-size: 12px;
   display: block;
   margin: 1px 0;
@@ -458,10 +490,12 @@ FAQs Page
 }
 
 /* dashboard */
+
 .dashboard-login-message {
   color: #c0ccd1;
   font-size: 10px;
 }
+
 .dashboard-page-name {
   font-size: 22px;
 }
@@ -500,6 +534,7 @@ FAQs Page
 }
 
 /* status overview */
+
 .status_overview-name {
   position: relative;
   top: 10px;
@@ -520,11 +555,12 @@ FAQs Page
   background-color: #fff;
   margin: 10px;
 }
+
 .message_overview_section {
   display: flex;
 }
-.message_container,
-.recent_activity_screen {
+
+.message_container, .recent_activity_screen {
   width: 49%;
   background-color: #fff;
   height: 250px;
@@ -534,13 +570,41 @@ FAQs Page
 .recent_activity_screen {
   margin-left: 10px;
 }
+
 .page-wrapper {
   min-height: 100vh;
 }
+
 .topbar {
-    background: linear-gradient(to right, #9E9E9E 0%, #BDBDBD 100%);
+  background: linear-gradient(to right, #9E9E9E 0%, #BDBDBD 100%);
 }
 
 .slimScrollDiv {
   overflow: visible !important;
+}
+
+/* Efko Colors */
+
+.top-navbar {
+  background-color: #328638;
+}
+
+.sidebar-nav>ul>li.active>a {
+  color: #328638 !important;
+}
+
+.sidebar-nav>ul>li.active>a {
+  color: #328638 !important;
+}
+
+.sidebar-nav>ul>li.active>a {
+  border-left: 3px solid #328638 !important;
+}
+
+.sidebar-nav>ul>li.active>a i {
+  color: #328638 !important;
+}
+
+.label-success {
+  background-color: #f62d51;
 }

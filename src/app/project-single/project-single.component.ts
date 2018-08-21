@@ -10,9 +10,11 @@ export class ProjectSingleComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
+  private projects:any;
+
   ngOnInit() {
     let obs = this.http.get('http://localhost/rest-it/public/api/project/2');
-    obs.subscribe((response)=> console.log(response)); 
+    obs.subscribe((response)=> this.projects = response);
   }
 
 }

@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProjectOverviewComponent implements OnInit {
 
-
   constructor(private http: HttpClient) { }
 
   private projects:any;
