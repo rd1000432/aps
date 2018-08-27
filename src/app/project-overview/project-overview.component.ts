@@ -15,7 +15,6 @@ export class ProjectOverviewComponent implements OnInit {
   ngOnInit() {
     let obs = this.http.get('http://localhost/rest-it/public/api/overview');
     obs.subscribe((response)=> this.projects = response);
-
   }
 
 }

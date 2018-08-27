@@ -210,3 +210,8 @@ ul {
 .btn-success {
   background-color: #328638;
 }
+
+#show-btn {
+  display: table-cell;
+  vertical-align: middle;
+}

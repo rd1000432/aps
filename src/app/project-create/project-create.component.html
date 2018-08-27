@@ -30,11 +30,7 @@
       <div class="col-10">
         <select class="form-control" name="brands" id="brands_dropdown">
                 <option value="" disabled selected>---Wählen Sie eine Brand aus:---</option>
-                <option value="gurken">Gurken</option>
-                <option value="pfefferoni">Pfefferoni</option>
-                <option value="spezialitäten">Spezialitäten</option>
-                <option value="salate">Salate</option>
-                <option value="sauerkraut_rotkraut">Sauerkraut & Rotkraut</option>
+                <option *ngFor="let brand of brands" value={{brand.id}}>{{brand.brandname}}</option>
           </select>
       </div>
     </div>
@@ -43,21 +39,7 @@
       <div class="col-10">
         <select class="form-control" name="produkt" id="produkt_dropdown">
                 <option value="" disabled selected>---Wählen Sie ein Produkt aus:---</option>
-                <option value="delikatess_gurken">Delikatess Gurken</option>
-                <option value="schlemmer_gurken">Schlemmer Gurken</option>
-                <option value="gewürz_gurken">Gewürz Gurken</option>
-                <option value="pfefferoni">Pfefferoni</option>
-                <option value="krach_pfefferoni">Krach-Pfefferoni</option>
-                <option value="chillimix">Chili Mix</option>
-                <option value="silber_zwiebeln">Silber Zwiebeln</option>
-                <option value="knoblauch">Knoblauch</option>
-                <option value="maiskölbchen">Maiskölbchen</option>
-                <option value="roterüben">Rote Rüben</option>
-                <option value="pußtasalat">Pußta Salat</option>
-                <option value="krautsalat">Kraut Salat</option>
-                <option value="delissasauerkraut">Delissa Sauerkraut</option>
-                <option value="bratwürstelsauerkraut">Bratwürstel Sauerkraut</option>
-                <option value="rotkrautmitäpfeln">Rotkraut mit Äpfeln</option>
+                <option *ngFor="let product of products" value={{product.id}}>{{product.productname}}</option>
           </select>
       </div>
     </div>
