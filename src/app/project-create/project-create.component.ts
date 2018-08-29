@@ -19,6 +19,23 @@ export class ProjectCreateComponent implements OnInit {
 
       let obs1 = this.http.get('http://localhost/rest-it/public/api/brand-infos');
       obs1.subscribe((response)=> this.brands = response);
+
+      const req = this.http.post('http://jsonplaceholder.typicode.com/posts', {
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+        })
+          .subscribe(
+            res => {
+              console.log(res);
+            },
+            err => {
+              console.log("Error occured");
+            }
+          );
+
+
+
     }
 
 
