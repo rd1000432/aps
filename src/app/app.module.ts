@@ -1,6 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { MorrisJsModule } from "angular-morris-js";
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from "./app.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -57,7 +59,8 @@ import { CommenterComponent } from './commenter/commenter.component';
     NgbModule,
     MorrisJsModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
