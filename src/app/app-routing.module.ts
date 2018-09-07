@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
-import { HeaderSideComponent } from "./header-side.component";
+import { HeaderComponent } from "../shared/components/header/header.component";
 
 import { LoginComponent } from "./authentication/login/login.component";
 
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { DataCenterComponent } from "./data-center/data-center.component";
+import { DataCenterComponent } from "./settings/data-center/data-center.component";
 import { ProjectOverviewComponent } from './project-center/project-overview/project-overview.component';
 import { ProjectSingleComponent } from './project-center/project-single/project-single.component';
 import { ProjectCreateComponent } from './project-center/project-create/project-create.component';
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   },
   {
     path: "",
-    component: HeaderSideComponent,
+    component: HeaderComponent,
     children: [
 
       { path: "dashboard", component: DashboardComponent },

@@ -45,7 +45,7 @@ export class ProjectCreateComponent implements OnInit {
       obs1.subscribe((response)=> this.brands = response);
 
        let obs2 = this.http.get('http://localhost/rest-it/public/api/csrf');
-       obs2.subscribe((response)=> this.accessToken = response; );
+       obs2.subscribe((response) => this.accessToken = response);
 
 
       // const headers = new HttpHeaders({ 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')});

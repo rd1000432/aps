@@ -3,15 +3,16 @@ import { NgModule } from "@angular/core";
 import { MorrisJsModule } from "angular-morris-js";
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from "./app.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { ChartsModule } from "ng2-charts";
 
-import { HeaderSideComponent } from "./header-side.component";
+import { AppComponent } from "./app.component";
+
+import { HeaderComponent } from "../shared/components/header/header.component";
 import { LoginComponent } from "./authentication/login/login.component";
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DataCenterComponent } from './data-center/data-center.component';
+import { DataCenterComponent } from './settings/data-center/data-center.component';
 
 import { ProjectOverviewComponent } from './project-center/project-overview/project-overview.component';
 import { ProjectSingleComponent } from './project-center/project-single/project-single.component';
@@ -24,7 +25,7 @@ import { CommenterComponent } from './commenter/commenter.component';
   declarations: [
     LoginComponent,
     AppComponent,
-    HeaderSideComponent,
+    HeaderComponent,
     DashboardComponent,
     DataCenterComponent,
     ProjectOverviewComponent,
