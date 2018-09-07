@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {RequestOptions, Request, RequestMethod} from '@angular/http';
+import { RequestOptions, Request, RequestMethod } from '@angular/http';
 import { Injectable } from '@angular/core';
-// import { Http, Headers, Response, RequestOptions } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+#import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -21,7 +21,7 @@ export class ProjectCreateComponent implements OnInit {
     private apiURL = "http://localhost/rest-it/public/api/create-project"; // API URL, defined in /routes/api.php in Laravel back-end
     private accessToken:any; // variable to store the access token
     private headers = new HttpHeaders(); // headers for each request
-    private options = new RequestOptions({ Headers: this.headers });
+    private options = new RequestOptions({ this.headers });
 
     private postData = {
       grant_type: "password",

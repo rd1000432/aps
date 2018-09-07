@@ -1,17 +1,3 @@
-@font-face {
-  font-family: Gotham-Black;
-  src: url("../../../assets/fonts/Gotham-Black.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: NationalCodes-Europe;
-  src: url("../../../assets/fonts/NationalCodes-Europe.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .brand_content_section-name::after {
   content: "";
   clear: both;

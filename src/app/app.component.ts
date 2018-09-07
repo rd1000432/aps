@@ -9,13 +9,12 @@ import {
 } from "@angular/router";
 
 @Component({
-  selector: "app-root",
-  template: `
-      <router-outlet></router-outlet>
-  `
+  selector: 'app-root',
+  template: '<router-outlet></router-outlet>'
 })
 export class AppComponent {
-  title = "app";
+  title = 'app';
+
   constructor () {
   }
 }

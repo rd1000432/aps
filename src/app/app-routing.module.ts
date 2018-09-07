@@ -1,16 +1,16 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
-import { HeaderComponent } from "../shared/components/header/header.component";
+import { HeaderComponent } from "./shared/components/header/header.component";
 
-import { LoginComponent } from "./authentication/login/login.component";
+import { LoginComponent } from "./modules/authentication/login/login.component";
 
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { DataCenterComponent } from "./settings/data-center/data-center.component";
-import { ProjectOverviewComponent } from './project-center/project-overview/project-overview.component';
-import { ProjectSingleComponent } from './project-center/project-single/project-single.component';
-import { ProjectCreateComponent } from './project-center/project-create/project-create.component';
-import { CommenterComponent } from "./commenter/commenter.component";
+import { DashboardComponent } from "./modules/dashboard/dashboard.component";
+import { DataCenterComponent } from "./modules/settings/data-center/data-center.component";
+import { ProjectOverviewComponent } from './modules/project-center/project-overview/project-overview.component';
+import { ProjectSingleComponent } from './modules/project-center/project-single/project-single.component';
+import { ProjectCreateComponent } from './modules/project-center/project-create/project-create.component';
+import { CommenterComponent } from "./modules/commenter/commenter.component";
 
 const appRoutes: Routes = [
   {
