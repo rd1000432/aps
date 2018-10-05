@@ -13,7 +13,7 @@ export class ProjectOverviewComponent implements OnInit {
   private projects:any;
 
   ngOnInit() {
-    let obs = this.http.get('http://localhost/rest-it/public/api/overview');
+    let obs = this.http.get('http://localhost/rest-it/public/api/project-data/overview');
     obs.subscribe((response)=> this.projects = response);
   }
 
