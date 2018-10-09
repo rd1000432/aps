@@ -8,16 +8,16 @@
             <br> <br> <br>
             <div class="col-10" id="ddwrapper">
               <select class="form-control" name="brands" id="brands_dropdown">
-                        <option value="" disabled selected>...Wählen Sie ein Projekt aus:...</option>
-                        <option *ngFor="let project of projects" value={{project.id}}>{{project.title}} - {{project.description}}</option>
-                  </select>
+                <option value="" disabled selected>...Wählen Sie ein Projekt aus:...</option>
+                <option *ngFor="let project of projects" value={{project.id}}>{{project.title}} - {{project.description}}</option>
+              </select>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-2" id="show-btn-parent">
         <div class="form-actions" id="show-btn">
-          <button type="submit" class="btn btn-success">Show</button>
+          <button style="margin-top: 25px;" type="submit" class="btn btn-success">Show</button>
         </div>
       </div>
     </div>
@@ -70,8 +70,8 @@
                     <div class="form-group">
                       <label class="control-label">Brand</label>
                       <select class="form-control" name="brands" id="brands_dropdown">
-                              <option value="" disabled selected>Pfefferoni</option>
-                        </select>
+                        <option value="" disabled selected>Pfefferoni</option>
+                      </select>
                     </div>
                   </div>
 
@@ -81,8 +81,8 @@
                     <div class="form-group">
                       <label class="control-label">Produkt</label>
                       <select class="form-control" name="products" id="products_dropdown">
-                                <option value="" disabled selected>Chili - Mix</option>
-                          </select>
+                        <option value="" disabled selected>Chili - Mix</option>
+                      </select>
                     </div>
                   </div>
                 </div>

@@ -38,14 +38,14 @@ export class ProjectCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    let obs = this.http.get('http://localhost/rest-it/public/api/product-infos');
+    let obs = this.http.get('http://localhost/rest-it/public/api/project-data/product-infos');
     obs.subscribe((response) => this.products = response);
 
-    let obs1 = this.http.get('http://localhost/rest-it/public/api/brand-infos');
+    let obs1 = this.http.get('http://localhost/rest-it/public/api/project-data/brand-infos');
     obs1.subscribe((response) => this.brands = response);
 
-    let obs2 = this.http.get('http://localhost/rest-it/public/api/csrf');
-    obs2.subscribe((response) => this.accessToken = response);
+    // let obs2 = this.http.get('http://localhost/rest-it/public/api/project-data/csrf');
+    // obs2.subscribe((response) => this.accessToken = response);
 
 
     // const headers = new HttpHeaders({ 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')});

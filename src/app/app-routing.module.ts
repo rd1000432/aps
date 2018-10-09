@@ -9,6 +9,7 @@ import { LoginComponent } from "./modules/authentication/login/login.component";
 import { VerifyComponent } from './modules/authentication/verify/verify.component';
 import { ForgotComponent } from './modules/authentication/forgot/forgot.component';
 import { PWResetComponent } from './modules/authentication/pwreset/pwreset.component';
+import { CheckmailComponent } from './modules/authentication/checkmail/checkmail.component';
 
 
 import { DashboardComponent } from "./modules/dashboard/dashboard.component";
@@ -27,11 +28,13 @@ const appRoutes: Routes = [
       { path: "register", component: RegisterComponent },
       { path: "verify", component: VerifyComponent },
       { path: "login", component: LoginComponent },
-      // { path: "reset", component: ProjectOverviewComponent }
+      { path: "reset", component: PWResetComponent },
+      { path: "checkmail", component: CheckmailComponent },
+      { path: "forgot", component: ForgotComponent }
     ]
   },
   {
-    path: "dashhboard",
+    path: "project",
     component: HeaderComponent,
     children: [
       { path: "project-overview", component: ProjectOverviewComponent },

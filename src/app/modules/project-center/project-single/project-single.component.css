@@ -46,7 +46,6 @@ ul {
 /* ul li:before {
     content: '✓';
   } */
-
 .brand_content_section {
   padding: 26px 15px;
 }
@@ -89,7 +88,6 @@ ul {
 }
 
 /* content section of brands */
-
 .content_section_list {
   display: flex;
   justify-content: space-between;
@@ -188,15 +186,14 @@ ul {
   width: 90%;
 }
 
-.card-outline-info .card-header {
+/* .card-outline-info .card-header {
   background-color: #328638;
   border: none;
 }
 
 .btn-success {
   background-color: #328638;
-}
-
+} */
 #show-btn {
   display: table-cell;
   vertical-align: middle;

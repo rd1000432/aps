@@ -20,6 +20,7 @@
     -webkit-transform: scale3d(1, 1, 0.5);
     transform: scale3d(1, 1, 0.5);
   }
+
   50% {
     -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
@@ -27,6 +28,7 @@
     -webkit-transform: scale3d(1, 1, 0.5);
     transform: scale3d(1, 1, 0.5);
   }
+
   100% {
     -webkit-box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.1);
@@ -44,6 +46,7 @@
     -webkit-transform: scale3d(1, 1, 0.5);
     transform: scale3d(1, 1, 0.5);
   }
+
   50% {
     -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
@@ -51,6 +54,7 @@
     -webkit-transform: scale3d(1, 1, 0.5);
     transform: scale3d(1, 1, 0.5);
   }
+
   100% {
     -webkit-box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.1);
@@ -61,7 +65,6 @@
 }
 
 /* =========page wrapper and card - center portion====== */
-
 .page-wrapper {
   background: #f2f4f8;
 }
@@ -84,7 +87,6 @@
 }
 
 /* ======card===== */
-
 .card-no-border .left-sidebar, .card-no-border .sidebar-nav {
   background: #272c33;
 }
@@ -94,7 +96,6 @@
 }
 
 /*Card-noborders*/
-
 .card-no-border .card {
   border: 0px;
 }
@@ -144,7 +145,6 @@
 /*******************
  Card title
 *******************/
-
 .card {
   margin-bottom: 30px;
 }
@@ -197,7 +197,6 @@
 /*==============================================================
  Cards page
  ============================================================== */
-
 .card-actions {
   float: right;
 }
@@ -295,7 +294,6 @@
 /*******************
 FAQs Page
 ******************/
-
 .minimal-faq .card {
   border: 0px;
 }
@@ -315,11 +313,8 @@ FAQs Page
 }
 
 /*******************/
-
 /*Chat widget*/
-
 /*******************/
-
 .chat-list {
   margin: 0px;
   padding: 0px;
@@ -391,11 +386,8 @@ FAQs Page
 }
 
 /*******************/
-
 /*Chat widget*/
-
 /*******************/
-
 .message-box ul li .drop-title {
   font-weight: 500;
   padding: 11px 20px 15px;
@@ -490,7 +482,6 @@ FAQs Page
 }
 
 /* dashboard */
-
 .dashboard-login-message {
   color: #c0ccd1;
   font-size: 10px;
@@ -534,7 +525,6 @@ FAQs Page
 }
 
 /* status overview */
-
 .status_overview-name {
   position: relative;
   top: 10px;
@@ -584,8 +574,7 @@ FAQs Page
 }
 
 /* Efko Colors */
-
-.top-navbar {
+/* .top-navbar {
   background-color: #328638;
 }
 
@@ -607,4 +596,4 @@ FAQs Page
 
 .label-success {
   background-color: #f62d51;
-}
+} */

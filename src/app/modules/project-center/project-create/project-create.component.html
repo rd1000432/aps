@@ -1,4 +1,4 @@
-<!-- <div class="col-md-12">
+<div class="col-md-12">
   <p class="form_heading">Neues Projekt erstellen:</p>
   <form class="form">
     <div class="form-group m-t-40 row">
@@ -29,18 +29,18 @@
       <label for="brands_dropdown" class="col-2 col-form-label">Brand</label>
       <div class="col-10">
         <select [(ngModel)]="newProject.brand_id" class="form-control" name="brands" id="brands_dropdown">
-                <option disabled selected>---Wählen Sie eine Brand aus:---</option>
-                <option  *ngFor="let brand of brands" value={{brand.id}}>{{brand.brandname}}</option>
-          </select>
+          <option disabled selected>---Wählen Sie eine Brand aus:---</option>
+          <option *ngFor="let brand of brands" value={{brand.id}}>{{brand.brandname}}</option>
+        </select>
       </div>
     </div>
     <div class="form-group row">
       <label for="produkt_dropdown" class="col-2 col-form-label">Produkt</label>
       <div class="col-10">
         <select [(ngModel)]="newProject.product_id" class="form-control" name="produkt" id="produkt_dropdown">
-                <option value="" disabled selected>---Wählen Sie ein Produkt aus:---</option>
-                <option *ngFor="let product of products" value={{product.id}}>{{product.productname}}</option>
-          </select>
+          <option value="" disabled selected>---Wählen Sie ein Produkt aus:---</option>
+          <option *ngFor="let product of products" value={{product.id}}>{{product.productname}}</option>
+        </select>
       </div>
     </div>
     <div class="form-group row btn-wrapper">
@@ -49,4 +49,4 @@
 
     </div>
   </form>
-</div> -->
+</div>

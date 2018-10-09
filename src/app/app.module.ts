@@ -24,6 +24,9 @@ import { VerifyComponent } from './modules/authentication/verify/verify.componen
 import { ForgotComponent } from './modules/authentication/forgot/forgot.component';
 import { PWResetComponent } from './modules/authentication/pwreset/pwreset.component';
 
+import { AuthService } from './auth.service';
+import { CheckmailComponent } from './modules/authentication/checkmail/checkmail.component';
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -36,7 +39,8 @@ import { PWResetComponent } from './modules/authentication/pwreset/pwreset.compo
     RegisterComponent,
     VerifyComponent,
     ForgotComponent,
-    PWResetComponent
+    PWResetComponent,
+    CheckmailComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,7 @@ import { PWResetComponent } from './modules/authentication/pwreset/pwreset.compo
     FormsModule,
     ProjectCenterModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
