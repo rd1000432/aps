@@ -109,14 +109,13 @@
 
             <button class="brand_content_section-createbtn" type="button" name="button">
               <i class="zmdi zmdi-plus-circle"></i>
-              <a href="/project-create"><label>Create</label></a>
+              <a href="/project/project-create"><label>Create</label></a>
             </button>
           </div>
 
           <div *ngFor="let project of projects" class="brand_content_section--list-data">
             <div class="content_section_list">
               <div class="content_section_list--date">
-                <img src={{project.img_url}} alt="preview" class="projects_image_preview">
                 <div class="project_description">
                   <label class="project_description-header">{{project.title}}</label>
                   <div class="project_description_list">
@@ -125,24 +124,28 @@
                     <span>{{project.id}}</span>
                   </div>
                   <div class="project_description_list">
-                    <label>Start Date:</label>
+                    <label>Start-Datum:</label>
                     <span>{{project.init_date}}</span>
                   </div>
                   <div class="project_description_list">
-                    <label>Brand:</label>
-                    <span>{{project.brandname}}</span>
+                    <label>End-Datum:</label>
+                    <span>{{project.end_date}}</span>
                   </div>
                   <div class="project_description_list">
-                    <label>Description:</label>
+                    <label>Beschreibung:</label>
                     <span>{{project.description}}</span>
                   </div>
                   <div class="project_description_list">
-                    <label>Product:</label>
-                    <span>{{project.productname}}</span>
+                    <label>Organisation:</label>
+                    <span>{{project.organisation_name}}</span>
                   </div>
                   <div class="project_description_list">
-                    <label>Organisation:</label>
-                    <span>{{project.name}}</span>
+                    <label>Projekt-Manager:</label>
+                    <span>{{project.manager}}</span>
+                  </div>
+                  <div class="project_description_list">
+                    <label>Projekt-Typ:</label>
+                    <span>{{project.type_name}}</span>
                   </div>
                 </div>
               </div>
@@ -151,7 +154,8 @@
                   <img src="../../assets/images/meter.png" width="165px" alt="meter">
                 </div> -->
                 <div class="content_section_list-version">
-                  <button>Open Project
+                  <button id="open_project" class="brand_content_section-createbtn" type="button" name="button">
+                    <a href="/project/project-single/{{project.id}}"><label>Open Project</label></a>
                     <i class="zmdi zmdi-caret-right"></i>
                   </button>
                 </div>

@@ -10,6 +10,7 @@ import { VerifyComponent } from './modules/authentication/verify/verify.componen
 import { ForgotComponent } from './modules/authentication/forgot/forgot.component';
 import { PWResetComponent } from './modules/authentication/pwreset/pwreset.component';
 import { CheckmailComponent } from './modules/authentication/checkmail/checkmail.component';
+import { CheckverificationmailComponent } from './modules/authentication/checkverificationmail/checkverificationmail.component';
 
 
 import { DashboardComponent } from "./modules/dashboard/dashboard.component";
@@ -17,7 +18,7 @@ import { DataCenterComponent } from "./modules/settings/data-center/data-center.
 import { ProjectOverviewComponent } from './modules/project-center/project-overview/project-overview.component';
 import { ProjectSingleComponent } from './modules/project-center/project-single/project-single.component';
 import { ProjectCreateComponent } from './modules/project-center/project-create/project-create.component';
-import { CommenterComponent } from "./modules/commenter/commenter.component";
+//import { CommenterComponent } from "./modules/commenter/commenter.component";
 
 const appRoutes: Routes = [
   { path: "", component: AuthenticationComponent },
@@ -28,8 +29,9 @@ const appRoutes: Routes = [
       { path: "register", component: RegisterComponent },
       { path: "verify", component: VerifyComponent },
       { path: "login", component: LoginComponent },
-      { path: "reset", component: PWResetComponent },
-      { path: "checkmail", component: CheckmailComponent },
+      { path: "reset/:token/:email", component: PWResetComponent },
+      { path: "checkmail/:email", component: CheckmailComponent },
+      { path: "checkverificationmail/:email", component: CheckverificationmailComponent },
       { path: "forgot", component: ForgotComponent }
     ]
   },
@@ -49,8 +51,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: "dashboard", component: DashboardComponent },
-  { path: "data-center", component: DataCenterComponent },
-  { path: "commenter", component: CommenterComponent }
+  { path: "data-center", component: DataCenterComponent }
 ];
 
 @NgModule({

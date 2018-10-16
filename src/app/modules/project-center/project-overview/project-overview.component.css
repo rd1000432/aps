@@ -1,3 +1,12 @@
+#open_project {
+  margin-left: 0 !important;
+}
+
+#open_project label {
+  margin-bottom: 0 !important;
+  margin-left: 1rem !important;
+}
+
 .projects_content_section {
   padding: 0 !important;
 }

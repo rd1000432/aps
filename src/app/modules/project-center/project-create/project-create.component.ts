@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ProjectDataService } from 'src/app/project-data.service';
+import { Type } from 'src/app/type';
 
 @Component({
   selector: 'app-project-create',
@@ -14,6 +16,7 @@ import { map } from 'rxjs/operators';
 export class ProjectCreateComponent implements OnInit {
 
   private products: any;
+  private types: any;
   private brands: any;
   private books = [];
   private newProject = {};
@@ -31,68 +34,25 @@ export class ProjectCreateComponent implements OnInit {
     password: "test123" // the user's password
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private projectDataService: ProjectDataService) {
     // all headers for JSON requests
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
   }
 
   ngOnInit() {
-    let obs = this.http.get('http://localhost/rest-it/public/api/project-data/product-infos');
-    obs.subscribe((response) => this.products = response);
-
-    let obs1 = this.http.get('http://localhost/rest-it/public/api/project-data/brand-infos');
-    obs1.subscribe((response) => this.brands = response);
-
-    // let obs2 = this.http.get('http://localhost/rest-it/public/api/project-data/csrf');
-    // obs2.subscribe((response) => this.accessToken = response);
-
-
-    // const headers = new HttpHeaders({ 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')});
-    // const req = this.http.post('http://localhost/rest-it/public/api/create-project', {
-    //  headers: this.headers,
-    // "init_date" : "2018-08-14 17:08:25",
-    // "title" : "asdfg",
-    // "description" : "asdfg",
-    // "img_url" : "sadfghj",
-    // "organisation_id" : "1",
-    // "brand_id" : "1",
-    // "product_id" : "1"
-    //   }).subscribe(
-    //       res => {
-    //         console.log(res);
-    //       },
-    //       err => {
-    //         console.log("Error occured");
-    //       }
-    //     );
-    // this.getToken()
-    // .subscribe(data => {
-    //    // set headers with Bearer token and save the token to access_token
-    //    this.setToken(data);
-    //  });
+    this.projectDataService.getTypes().subscribe((data: Type) => this.types = data);
   }
 
-  // getToken() {
-  //    return this.http.post(this.oAuthURL, this.postData, this.headers).pipe(map(response => response.json().access_token));
-  //  }
-  //
-  //  setToken(token) {
-  //    this.headers.append('Authorization', 'Bearer ' + token); // add the Authentication header
-  //    this.accessToken = token;  // save the access_token
-  //  }
-  //
-  //  getBooks() {
-  //    return this.http.get(this.apiURL, this.options)
-  //               .pipe(map(response => response.json()));
-  //  }
-  //
-  //
-  // addBook() {
-  //   this.http.post(this.apiURL, JSON.stringify(this.newProject), this.options)
-  //            .subscribe(data => {
-  //               this.getBooks()
-  //                   .subscribe(data => this.books = data);
-  //   });
-  // }
+
+  createProject() {
+    this.projectDataService.createProject(this.newProject).subscribe(result => {
+      console.log(result);
+    },
+      error => {
+        console.log("error");
+      }
+    );
+  }
+
 }

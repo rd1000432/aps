@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { RequestOptions, Request, RequestMethod } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Http, Headers, Response } from '@angular/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ProjectDataService } from 'src/app/project-data.service';
+import { Project } from 'src/app/project';
 
 @Component({
   selector: 'app-project-single',
@@ -8,13 +15,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProjectSingleComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private projectDataService: ProjectDataService) { }
 
-  private projects:any;
+  private projects: any;
 
   ngOnInit() {
-      let obs = this.http.get('http://localhost/rest-it/public/api/overview');
-      obs.subscribe((response)=> this.projects = response);
+    // let obs = this.http.get('http://localhost/rest-it/public/api/project-data/project/5');
+    // obs.subscribe((response) => this.projects = response);
+
+    this.projectDataService.getSingleProject("3").subscribe((data: Project) => this.projects = data);
   }
 
 }

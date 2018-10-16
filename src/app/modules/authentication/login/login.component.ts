@@ -12,12 +12,20 @@ import { User } from 'src/app/user';
 })
 export class LoginComponent {
   private user = {};
+  private response = {};
+  show: boolean = false;
   constructor(private authService: AuthService, private router: Router) { }
 
 
   onClick() {
-    this.authService.login(this.user).subscribe();
-    this.router.navigate(['/dashboard']);
+    this.authService.login(this.user).subscribe(result => {
+      this.show = false;
+      this.router.navigate(['/dashboard']);
+    },
+      error => {
+        this.show = true;
+      }
+    );
   }
 
 }

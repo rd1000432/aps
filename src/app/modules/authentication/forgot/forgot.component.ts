@@ -10,11 +10,13 @@ import { User } from 'src/app/user';
   styleUrls: ['./forgot.component.css']
 })
 export class ForgotComponent {
-  private user = {};
-  constructor(private authService: AuthService, private router: Router) { }
+  private user: { email: string };
+  constructor(private authService: AuthService, private router: Router) {
+    this.user = { email: "" };
+  }
   onClick() {
     this.authService.forgot(this.user).subscribe();
-    this.router.navigate(['auth/checkmail']);
+    this.router.navigate(['auth/checkmail/' + this.user.email]);
   }
 
 }

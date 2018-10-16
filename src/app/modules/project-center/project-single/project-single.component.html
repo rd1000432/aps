@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12 projects_content_section">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-10">
         <div class="brand_content_section">
           <div class="brand_content_section--header">
@@ -20,17 +20,17 @@
           <button style="margin-top: 25px;" type="submit" class="btn btn-success">Show</button>
         </div>
       </div>
-    </div>
-    <div class="row">
+    </div> -->
+    <div *ngFor="let project of projects" class="row">
       <div class="col-lg-12">
         <div class="card card-outline-info">
           <div class="card-header">
-            <h4 class="m-b-0 text-white">Projekt: Chili Mix - Packaging 09/2018</h4>
+            <h4 class="m-b-0 text-white">{{project.title}}</h4>
           </div>
           <div class="card-body">
             <form action="#">
               <div class="form-body">
-                <h3 class="card-title">Projekt Info</h3>
+                <h3 class="card-title">{{project.description}}</h3>
                 <hr>
                 <div class="row p-t-20">
                   <div class="col-md-12">
@@ -56,7 +56,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row p-t-20">
+                <!-- <div class="row p-t-20">
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">Projekt-Bild</label>
@@ -64,8 +64,8 @@
                       <input type="file" id="projektbild" class="form-control" value="Packaging September 2018">
                     </div>
                   </div>
-                </div>
-                <div class="row p-t-20">
+                </div> -->
+                <!-- <div class="row p-t-20">
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">Brand</label>
@@ -75,13 +75,13 @@
                     </div>
                   </div>
 
-                </div>
+                </div> -->
                 <div class="row p-t-20">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label class="control-label">Produkt</label>
+                      <label class="control-label">Typ</label>
                       <select class="form-control" name="products" id="products_dropdown">
-                        <option value="" disabled selected>Chili - Mix</option>
+                        <option value="" disabled selected>{{project.type_name}}</option>
                       </select>
                     </div>
                   </div>

@@ -10,12 +10,14 @@ import { User } from 'src/app/user';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  private user = {};
-  constructor(private authService: AuthService, private router: Router) { }
+  private user: { name: string, email: string, password: string, c_password: string };
+  constructor(private authService: AuthService, private router: Router) {
+    this.user = { email: "", name: "", password: "", c_password: "" };
+  }
 
   onClick() {
     this.authService.register(this.user).subscribe();
-    this.router.navigate(['/auth/checkmail']);
+
   }
 
 }

@@ -19,8 +19,8 @@ const httpOptions = {
 export class AuthService {
   protected login_url: string = 'http://localhost/rest-it/public/api/authentification/login';
   protected register_url: string = 'http://localhost/rest-it/public/api/authentification/register';
-  protected forgot_url: string = 'http://localhost/rest-it/public/api/authentification/verifymail';
-  protected reset_url: string = 'http://localhost/rest-it/public/api/authentification/pw-reset';
+  protected forgot_url: string = 'http://localhost/rest-it/public/api/authentification/forgot';
+  protected reset_url: string = 'http://localhost/rest-it/public/api/authentification/passwordReset';
 
 
   constructor(private http: HttpClient) { }

@@ -15,7 +15,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DataCenterComponent } from './modules/settings/data-center/data-center.component';
 
 import { ProjectCenterModule } from './modules/project-center/project-center.module';
-import { CommenterComponent } from './modules/commenter/commenter.component';
+//import { CommenterComponent } from './modules/commenter/commenter.component';
 
 import { AuthenticationComponent } from './modules/authentication/authentication.component';
 import { RegisterComponent } from './modules/authentication/register/register.component';
@@ -26,6 +26,7 @@ import { PWResetComponent } from './modules/authentication/pwreset/pwreset.compo
 
 import { AuthService } from './auth.service';
 import { CheckmailComponent } from './modules/authentication/checkmail/checkmail.component';
+import { CheckverificationmailComponent } from './modules/authentication/checkverificationmail/checkverificationmail.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +35,14 @@ import { CheckmailComponent } from './modules/authentication/checkmail/checkmail
     HeaderComponent,
     DashboardComponent,
     DataCenterComponent,
-    CommenterComponent,
+    //CommenterComponent,
     AuthenticationComponent,
     RegisterComponent,
     VerifyComponent,
     ForgotComponent,
     PWResetComponent,
-    CheckmailComponent
+    CheckmailComponent,
+    CheckverificationmailComponent
   ],
   imports: [
     BrowserModule,

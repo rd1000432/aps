@@ -14,18 +14,47 @@
       </div>
     </div>
     <div class="form-group row">
+      <label for="enddatum-input" class="col-2 col-form-label">Enddatum</label>
+      <div class="col-10">
+        <input class="form-control" name="end_date" type="date" placeholder="Geben Sie das Enddatum für das neue Projekt ein." id="enddatum-input" [(ngModel)]="newProject.end_date">
+      </div>
+    </div>
+    <div class="form-group row">
       <label for="Beschreibung-input" class="col-2 col-form-label">Beschreibung</label>
       <div class="col-10">
         <input class="form-control" name="description" type="text" placeholder="Geben Sie eine Beschreibung für das neue Projekt ein." id="Beschreibung-input" [(ngModel)]="newProject.description">
       </div>
     </div>
     <div class="form-group row">
+      <label for="Manager-input" class="col-2 col-form-label">Projekt-Manager</label>
+      <div class="col-10">
+        <input class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Manager an" id="Manager-input" [(ngModel)]="newProject.manager">
+      </div>
+    </div>
+    <!-- <div class="dropdown bootstrap-select show-tick"><select class="selectpicker" multiple="" data-style="form-control btn-secondary" tabindex="-98">
+        <option>Mustard</option>
+        <option>Ketchup</option>
+        <option>Relish</option>
+      </select><button type="button" class="btn dropdown-toggle bs-placeholder form-control btn-secondary" data-toggle="dropdown" role="button" title="Nothing selected">
+        <div class="filter-option">
+          <div class="filter-option-inner">
+            <div class="filter-option-inner-inner">Nothing selected</div>
+          </div>
+        </div>
+      </button>
+      <div class="dropdown-menu " role="combobox">
+        <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1">
+          <ul class="dropdown-menu inner show"></ul>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="form-group row">
       <label for="Bild-input" class="col-2 col-form-label">Projekt - Bild</label>
       <div class="col-10">
         <input class="form-control" name="img_url" type="file" id="Bild-input" [(ngModel)]="newProject.img_url">
       </div>
-    </div>
-    <div class="form-group row">
+    </div> -->
+    <!-- <div class="form-group row">
       <label for="brands_dropdown" class="col-2 col-form-label">Brand</label>
       <div class="col-10">
         <select [(ngModel)]="newProject.brand_id" class="form-control" name="brands" id="brands_dropdown">
@@ -33,19 +62,19 @@
           <option *ngFor="let brand of brands" value={{brand.id}}>{{brand.brandname}}</option>
         </select>
       </div>
-    </div>
+    </div> -->
     <div class="form-group row">
-      <label for="produkt_dropdown" class="col-2 col-form-label">Produkt</label>
+      <label for="type_dropdown" class="col-2 col-form-label">Typ</label>
       <div class="col-10">
-        <select [(ngModel)]="newProject.product_id" class="form-control" name="produkt" id="produkt_dropdown">
-          <option value="" disabled selected>---Wählen Sie ein Produkt aus:---</option>
-          <option *ngFor="let product of products" value={{product.id}}>{{product.productname}}</option>
+        <select [(ngModel)]="newProject.type_id" class="form-control" name="type" id="type_dropdown">
+          <option value="" disabled selected>---Wählen Sie den Typ des Projekts aus:---</option>
+          <option *ngFor="let type of types" value={{type.id}}>{{type.name}}</option>
         </select>
       </div>
     </div>
     <div class="form-group row btn-wrapper">
 
-      <button id="create_btn" type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="addProject()">Projekt anlegen</button>
+      <button id="create_btn" type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="createProject()">Projekt anlegen</button>
 
     </div>
   </form>

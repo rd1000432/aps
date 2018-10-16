@@ -3,6 +3,11 @@
   <!--<h3 class="box-title m-b-20">Sign In</h3>-->
   <div class="form-group ">
     <div class="col-xs-12">
+      <p *ngIf="show" style="color: red;">Wrong User Data! Please try again or click "Forgot password?" below!</p>
+    </div>
+  </div>
+  <div class="form-group ">
+    <div class="col-xs-12">
       <input class="form-control" type="email" required="" placeholder="Username" name="email" [(ngModel)]="user.email"> </div>
   </div>
   <div class="form-group">
@@ -14,7 +19,7 @@
       <div class="checkbox checkbox-primary pull-left p-t-0">
         <input id="checkbox-signup" type="checkbox">
         <label for="checkbox-signup"> Remember me </label>
-      </div> <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot password?</a>
+      </div> <a href="auth/forgot" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot password?</a>
     </div>
   </div>
   <div class="form-group text-center m-t-20">

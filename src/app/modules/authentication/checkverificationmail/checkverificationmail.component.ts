@@ -5,23 +5,23 @@ import { AuthService } from 'src/app/auth.service';
 import { User } from 'src/app/user';
 
 @Component({
-  selector: 'app-checkmail',
-  templateUrl: './checkmail.component.html',
-  styleUrls: ['./checkmail.component.css']
+  selector: 'app-checkverificationmail',
+  templateUrl: './checkverificationmail.component.html',
+  styleUrls: ['./checkverificationmail.component.css']
 })
-export class CheckmailComponent {
-  private user: { email: string };
+export class CheckverificationmailComponent {
+  private user: { name: string, email: string, password: string, c_password: string };
   private text: string;
 
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) {
-    this.user = { email: "" };
+    this.user = { email: "", name: "", password: "", c_password: "" };
     this.text = "Wir haben dir einen Link geschickt!";
   }
 
   onClick() {
     this.user.email = this.route.snapshot.params.email;
-    this.authService.forgot(this.user).subscribe((response: Response) => {
-      if (response.hasOwnProperty('existing')) {
+    this.authService.register(this.user).subscribe((response: Response) => {
+      if (response.hasOwnProperty('success')) {
         this.text = "Wir haben dir erneut einen Link geschickt!";
       }
       else {
@@ -29,7 +29,5 @@ export class CheckmailComponent {
       }
     });
   }
-
-
 
 }
