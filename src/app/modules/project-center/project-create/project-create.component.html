@@ -28,7 +28,7 @@
     <div class="form-group row">
       <label for="Manager-input" class="col-2 col-form-label">Projekt-Manager</label>
       <div class="col-10">
-        <input class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Manager an" id="Manager-input" [(ngModel)]="newProject.manager">
+        <input class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Manager an" [(ngModel)]="newProject.manager">
       </div>
     </div>
     <!-- <div class="dropdown bootstrap-select show-tick"><select class="selectpicker" multiple="" data-style="form-control btn-secondary" tabindex="-98">
@@ -48,21 +48,13 @@
         </div>
       </div>
     </div> -->
-    <!-- <div class="form-group row">
-      <label for="Bild-input" class="col-2 col-form-label">Projekt - Bild</label>
+    <div class="form-group row">
+      <label for="tags-input" class="col-2 col-form-label">Tags</label>
       <div class="col-10">
-        <input class="form-control" name="img_url" type="file" id="Bild-input" [(ngModel)]="newProject.img_url">
+        <!-- onkey up event in src\assets\plugins\bootstrap-tagsinput\dist\bootstrap-tagsinput.js file -->
+        <input class="form-control" type="text" name="tag" data-role="tagsinput" id="tags-input" placeholder="add tags">
       </div>
-    </div> -->
-    <!-- <div class="form-group row">
-      <label for="brands_dropdown" class="col-2 col-form-label">Brand</label>
-      <div class="col-10">
-        <select [(ngModel)]="newProject.brand_id" class="form-control" name="brands" id="brands_dropdown">
-          <option disabled selected>---Wählen Sie eine Brand aus:---</option>
-          <option *ngFor="let brand of brands" value={{brand.id}}>{{brand.brandname}}</option>
-        </select>
-      </div>
-    </div> -->
+    </div>
     <div class="form-group row">
       <label for="type_dropdown" class="col-2 col-form-label">Typ</label>
       <div class="col-10">
@@ -73,9 +65,7 @@
       </div>
     </div>
     <div class="form-group row btn-wrapper">
-
       <button id="create_btn" type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="createProject()">Projekt anlegen</button>
-
     </div>
   </form>
 </div>

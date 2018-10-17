@@ -15,6 +15,6 @@ import {
 export class AppComponent {
   title = 'app';
 
-  constructor () {
+  constructor() {
   }
 }

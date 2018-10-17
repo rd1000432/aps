@@ -18,6 +18,7 @@ const httpOptions = {
 })
 export class ProjectDataService {
   protected create_project_url: string = 'http://localhost/rest-it/public/api/project-data/create-project';
+  protected create_tag_url: string = 'http://localhost/rest-it/public/api/project-data/create-tag';
   protected show_all_projects_url: string = 'http://localhost/rest-it/public/api/project-data/overview';
   protected show_single_project_url: string = 'http://localhost/rest-it/public/api/project-data/project';
   protected show_types_url: string = 'http://localhost/rest-it/public/api/project-data/get_types';
@@ -37,6 +38,9 @@ export class ProjectDataService {
     return this.http.post<Project>(this.create_project_url, project, httpOptions)
   }
 
+  createTags(project: Project): Observable<Project> {
+    return this.http.post<Project>(this.create_tag_url, project, httpOptions)
+  }
 
 
 }
