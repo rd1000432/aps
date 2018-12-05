@@ -21,3 +21,10 @@
 /* #create_btn {
   background-color: #328638;
 } */
+.col-md-12 {
+  margin-left: 2rem;
+}
+
+/* #titel-input::placeholder {
+  color: red;
+} */

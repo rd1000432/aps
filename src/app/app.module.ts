@@ -1,4 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
+import * as $ from 'jquery';
 import { NgModule } from "@angular/core";
 import { MorrisJsModule } from "angular-morris-js";
 import { FormsModule } from '@angular/forms';
@@ -27,6 +28,7 @@ import { PWResetComponent } from './modules/authentication/pwreset/pwreset.compo
 import { AuthService } from './auth.service';
 import { CheckmailComponent } from './modules/authentication/checkmail/checkmail.component';
 import { CheckverificationmailComponent } from './modules/authentication/checkverificationmail/checkverificationmail.component';
+import { DialogComponentComponent } from './modules/dialog-component/dialog-component.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +37,14 @@ import { CheckverificationmailComponent } from './modules/authentication/checkve
     HeaderComponent,
     DashboardComponent,
     DataCenterComponent,
-    //CommenterComponent,
     AuthenticationComponent,
     RegisterComponent,
     VerifyComponent,
     ForgotComponent,
     PWResetComponent,
     CheckmailComponent,
-    CheckverificationmailComponent
+    CheckverificationmailComponent,
+    DialogComponentComponent
   ],
   imports: [
     BrowserModule,

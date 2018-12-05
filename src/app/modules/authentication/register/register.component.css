@@ -18,3 +18,7 @@
   margin-bottom: 1rem;
   width: 50%;
 }
+
+.card-body {
+  height: 750px;
+}

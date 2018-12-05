@@ -1,5 +1,9 @@
 <form class="form-horizontal form-material" id="loginform" action="index.html">
-  <img class="login-logo" src="../assets/images/logo.png" />
+  <div class="form-group ">
+    <div class="col-xs-12">
+      <p *ngIf="show" style="color: red;">Passwords are not identical!</p>
+    </div>
+  </div>
   <div class="form-group">
     <div class="col-xs-12">
       <input class="form-control" type="password" name="newpw" placeholder="Neues Passwort" [(ngModel)]="user.newpw"> </div>
@@ -11,7 +15,7 @@
 
   <div class="form-group text-center m-t-20">
     <div class="col-xs-12">
-      <button (click)="onClick()" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Passwort zurücksetzen</button>
+      <button (click)="onClick()" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" id="authbutton" type="submit">Passwort zurücksetzen</button>
     </div>
   </div>
 </form>

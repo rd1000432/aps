@@ -198,3 +198,19 @@ ul {
   display: table-cell;
   vertical-align: middle;
 }
+
+.col-md-9 {
+  display: inline-block;
+}
+
+label.control-label {
+  display: inline-block;
+}
+
+#editbtn {
+  margin-right: 1rem;
+}
+
+#delbtn {
+  margin-left: 1rem;
+}

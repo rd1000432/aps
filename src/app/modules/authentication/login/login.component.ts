@@ -20,7 +20,7 @@ export class LoginComponent {
   onClick() {
     this.authService.login(this.user).subscribe(result => {
       this.show = false;
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/project/project-overview']);
     },
       error => {
         this.show = true;

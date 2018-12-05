@@ -18,6 +18,7 @@ import { DataCenterComponent } from "./modules/settings/data-center/data-center.
 import { ProjectOverviewComponent } from './modules/project-center/project-overview/project-overview.component';
 import { ProjectSingleComponent } from './modules/project-center/project-single/project-single.component';
 import { ProjectCreateComponent } from './modules/project-center/project-create/project-create.component';
+import { ProjectSearchComponent } from './modules/project-center/project-search/project-search.component';
 //import { CommenterComponent } from "./modules/commenter/commenter.component";
 
 const appRoutes: Routes = [
@@ -41,13 +42,11 @@ const appRoutes: Routes = [
     children: [
       { path: "project-overview", component: ProjectOverviewComponent },
       {
-        path: "project-single",
+        path: "project-single/:id",
         component: ProjectSingleComponent,
-        children: [
-          { path: ":id", component: ProjectSingleComponent }
-        ]
       },
-      { path: "project-create", component: ProjectCreateComponent }
+      { path: "project-create", component: ProjectCreateComponent },
+      { path: "project-search", component: ProjectSearchComponent }
     ]
   },
   { path: "dashboard", component: DashboardComponent },

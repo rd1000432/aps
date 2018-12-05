@@ -1,12 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { RequestOptions, Request, RequestMethod } from '@angular/http';
-import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
 import { ProjectDataService } from 'src/app/project-data.service';
 import { Project } from 'src/app/project';
+import { Type } from 'src/app/type';
 
 @Component({
   selector: 'app-project-single',
@@ -15,15 +11,53 @@ import { Project } from 'src/app/project';
 })
 export class ProjectSingleComponent implements OnInit {
 
-  constructor(private http: HttpClient, private projectDataService: ProjectDataService) { }
-
   private projects: any;
+  private types: any;
+  private tags: any;
+  private id: any;
+  private edit: boolean = true;
+
+  constructor(private projectDataService: ProjectDataService, private router: Router, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
-    // let obs = this.http.get('http://localhost/rest-it/public/api/project-data/project/5');
-    // obs.subscribe((response) => this.projects = response);
+    this.id = this.route.snapshot.params.id;
+    this.projectDataService.getSingleProject(this.id).subscribe((data: Project) => this.projects = data);
+    this.projectDataService.getSingleTags(this.id).subscribe((data: Project) => this.tags = data);
+    this.projectDataService.getTypes().subscribe((data: Type) => this.types = data);
+  }
 
-    this.projectDataService.getSingleProject("3").subscribe((data: Project) => this.projects = data);
+  toggle() {
+    this.edit = !this.edit;
+  }
+
+
+  delete() {
+    this.projectDataService.deleteProject({ 'id': this.id }).subscribe(result => {
+      console.log(result);
+      this.router.navigate(['/project/project-overview']);
+    },
+      error => {
+        console.log("Project could not be deleted");
+      }
+    );
+  }
+
+  upload(event) {
+    let fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+      let file: File = fileList[0];
+      let formData: FormData = new FormData();
+      formData.append('uploadFile', file);
+      this.projectDataService.uploadFile(formData).subscribe(result => {
+        console.log(result);
+        this.router.navigate(['/project/project-overview']);
+      },
+        error => {
+          console.log("Datei konnte nicht hochgeladen werden!");
+        }
+      );
+    }
   }
 
 }

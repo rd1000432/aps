@@ -1,3 +1,12 @@
+.form_heading {
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+.form-group label {
+  font-size: 18px;
+}
+
 #open_project {
   margin-left: 0 !important;
 }
@@ -198,4 +207,8 @@ ul {
 
 .brand_content_section-createbtn label {
   color: #fff;
+}
+
+.col-md-12 {
+  margin-left: 2rem;
 }

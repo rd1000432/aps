@@ -39,6 +39,28 @@ File: scss
     top: calc(50% - 3.5px);
     left: calc(50% - 3.5px); }
 
+/* Benutzerdefiniertes CSS _ Patrick am 04.12 
+   Neuherz-Farben: helles Rot->#be1521, dunkles Rot: #c02b36
+*/
+
+#authbutton {
+  background-color: transparent;
+  border-color: #be1521;
+  color: #be1521;
+  width: 90%;
+}
+
+#authbutton:hover {
+  background-color: #c02b36;
+  border-color: #c02b36;
+  color: white;
+}
+
+#signup>b{
+  color: #be1521;
+}
+
+
 /*
 Template Name: Monster Admin
 Author: Themedesigner
@@ -1816,7 +1838,7 @@ File: scss
     display: none; }
 
 .page-wrapper {
-  background: #fff;
+  background: #fff !important;
   padding-bottom: 60px; }
 
 .container-fluid {

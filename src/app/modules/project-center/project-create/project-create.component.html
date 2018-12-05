@@ -2,66 +2,55 @@
   <p class="form_heading">Neues Projekt erstellen:</p>
   <form class="form">
     <div class="form-group m-t-40 row">
-      <label for="titel-input" class="col-2 col-form-label">Titel</label>
-      <div class="col-10">
+      <label for="titel-input" class="col-2 col-form-label">Titel*</label>
+      <div class="col-10 col-md-6">
         <input class="form-control" type="text" placeholder="Geben Sie den Titel für das neue Projekt ein." id="titel-input" value="title" name="title" [(ngModel)]="newProject.title">
       </div>
     </div>
     <div class="form-group row">
-      <label for="startdatum-input" class="col-2 col-form-label">Startdatum</label>
-      <div class="col-10">
-        <input class="form-control" name="init_date" type="date" placeholder="Geben Sie das Startdatum für das neue Projekt ein." id="startdatum-input" [(ngModel)]="newProject.init_date">
+      <label for="startdatum-input" class="col-2 col-form-label">Startdatum*</label>
+      <div class="col-10 col-md-6">
+        <input class="form-control" name="init_date" placeholder="Geben Sie das Startdatum für das neue Projekt ein." type="text" onfocus="(this.type='date')" id="startdatum-input" [(ngModel)]="newProject.init_date">
       </div>
     </div>
     <div class="form-group row">
-      <label for="enddatum-input" class="col-2 col-form-label">Enddatum</label>
-      <div class="col-10">
-        <input class="form-control" name="end_date" type="date" placeholder="Geben Sie das Enddatum für das neue Projekt ein." id="enddatum-input" [(ngModel)]="newProject.end_date">
+      <label for="enddatum-input" class="col-2 col-form-label">Enddatum*</label>
+      <div class="col-10 col-md-6">
+        <input class="form-control" name="end_date" placeholder="Geben Sie das Enddatum für das neue Projekt ein." type="text" onfocus="(this.type='date')" id="enddatum-input" [(ngModel)]="newProject.end_date">
       </div>
     </div>
     <div class="form-group row">
       <label for="Beschreibung-input" class="col-2 col-form-label">Beschreibung</label>
-      <div class="col-10">
+      <div class="col-10 col-md-6">
         <input class="form-control" name="description" type="text" placeholder="Geben Sie eine Beschreibung für das neue Projekt ein." id="Beschreibung-input" [(ngModel)]="newProject.description">
       </div>
     </div>
     <div class="form-group row">
-      <label for="Manager-input" class="col-2 col-form-label">Projekt-Manager</label>
-      <div class="col-10">
-        <input class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Manager an" [(ngModel)]="newProject.manager">
+      <label for="Manager-input" class="col-2 col-form-label">Projekt-Manager*</label>
+      <div class="col-10 col-md-6">
+        <input class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Manager an" id="Manager-input" [(ngModel)]="newProject.manager">
       </div>
     </div>
-    <!-- <div class="dropdown bootstrap-select show-tick"><select class="selectpicker" multiple="" data-style="form-control btn-secondary" tabindex="-98">
-        <option>Mustard</option>
-        <option>Ketchup</option>
-        <option>Relish</option>
-      </select><button type="button" class="btn dropdown-toggle bs-placeholder form-control btn-secondary" data-toggle="dropdown" role="button" title="Nothing selected">
-        <div class="filter-option">
-          <div class="filter-option-inner">
-            <div class="filter-option-inner-inner">Nothing selected</div>
-          </div>
-        </div>
-      </button>
-      <div class="dropdown-menu " role="combobox">
-        <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1">
-          <ul class="dropdown-menu inner show"></ul>
-        </div>
-      </div>
-    </div> -->
     <div class="form-group row">
       <label for="tags-input" class="col-2 col-form-label">Tags</label>
-      <div class="col-10">
-        <!-- onkey up event in src\assets\plugins\bootstrap-tagsinput\dist\bootstrap-tagsinput.js file -->
+      <div class="col-10 col-md-6">
         <input class="form-control" type="text" name="tag" data-role="tagsinput" id="tags-input" placeholder="add tags">
       </div>
     </div>
     <div class="form-group row">
-      <label for="type_dropdown" class="col-2 col-form-label">Typ</label>
-      <div class="col-10">
+      <label for="type_dropdown" class="col-2 col-form-label">Typ*</label>
+      <div class="col-10 col-md-6">
         <select [(ngModel)]="newProject.type_id" class="form-control" name="type" id="type_dropdown">
-          <option value="" disabled selected>---Wählen Sie den Typ des Projekts aus:---</option>
+          <option [value]="placeholder_for_dropdown" disabled selected>--- Wählen Sie den Typ des Projekts aus ---</option>
+          <option value="---Neuen Projekt-Typen anlegen---">---Neuen Projekt-Typen anlegen---</option>
           <option *ngFor="let type of types" value={{type.id}}>{{type.name}}</option>
         </select>
+      </div>
+    </div>
+    <div *ngIf="newProject.type_id === '---Neuen Projekt-Typen anlegen---'" class="form-group row">
+      <label for="new-typ-input" class="col-2 col-form-label">Typ anlegen:*</label>
+      <div class="col-10 col-md-6">
+        <input id="new-typ-input" class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Typen an" [(ngModel)]="newtypename">
       </div>
     </div>
     <div class="form-group row btn-wrapper">

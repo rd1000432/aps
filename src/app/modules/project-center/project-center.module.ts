@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ProjectOverviewComponent } from './project-overview/project-overview.component';
 import { ProjectSingleComponent } from './project-single/project-single.component';
 import { ProjectCreateComponent } from './project-create/project-create.component';
-
+import { ProjectSearchComponent } from './project-search/project-search.component';
 
 
 
@@ -23,7 +23,8 @@ import { ProjectCreateComponent } from './project-create/project-create.componen
   declarations: [
     ProjectOverviewComponent,
     ProjectSingleComponent,
-    ProjectCreateComponent
+    ProjectCreateComponent,
+    ProjectSearchComponent
   ]
 })
 export class ProjectCenterModule { }

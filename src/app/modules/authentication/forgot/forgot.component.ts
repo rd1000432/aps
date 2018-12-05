@@ -15,6 +15,7 @@ export class ForgotComponent {
     this.user = { email: "" };
   }
   onClick() {
+
     this.authService.forgot(this.user).subscribe();
     this.router.navigate(['auth/checkmail/' + this.user.email]);
   }

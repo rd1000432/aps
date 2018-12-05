@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-verify',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerifyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  btnClick() {
+    this.router.navigateByUrl('/project/project-overview');
+  };
 
 }

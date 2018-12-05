@@ -22,3 +22,15 @@
 .card-body {
   height: 540px;
 }
+
+.neuherz-logo {
+  display: block;
+  width: 50%;
+  position: absolute;
+  right: 25%;
+  bottom: 1rem;
+}
+
+.moreheight {
+  height: 750px;
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ProjectDataService } from 'src/app/project-data.service';
+import { Project } from 'src/app/project';
 
 @Component({
   selector: 'app-project-overview',
@@ -8,13 +10,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProjectOverviewComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  private projects: any;
 
-  private projects:any;
+  constructor(private projectDataService: ProjectDataService, private http: HttpClient) { }
 
   ngOnInit() {
-    let obs = this.http.get('http://localhost/rest-it/public/api/project-data/overview');
-    obs.subscribe((response)=> this.projects = response);
+    this.projectDataService.getAllProjects().subscribe((data: Project) => this.projects = data);
   }
+
+
 
 }
