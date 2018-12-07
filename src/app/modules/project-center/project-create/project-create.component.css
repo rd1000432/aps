@@ -28,3 +28,13 @@
 /* #titel-input::placeholder {
   color: red;
 } */
+
+.missing {
+  color:red;
+}
+
+
+#picture-input {
+  top: 25%;
+  position: absolute;
+}

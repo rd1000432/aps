@@ -1,3 +1,9 @@
+#input-file-now {
+  display: inline-block;
+  width: auto;
+}
+
+
 .brand_content_section-name::after {
   content: "";
   clear: both;
@@ -194,6 +200,13 @@ ul {
 .btn-success {
   background-color: #328638;
 } */
+
+.card-outline-info .card-header {
+  background: white;
+  border-color: white;
+  color: black;
+}
+
 #show-btn {
   display: table-cell;
   vertical-align: middle;

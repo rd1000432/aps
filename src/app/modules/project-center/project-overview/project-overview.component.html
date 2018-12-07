@@ -1,124 +1,18 @@
 <div class="row">
   <div class="col-md-12 projects_content_section">
     <div class="row">
-      <!-- <div class="side_bar col-md-2">
-        <div>
-          <ul>
-            <li>
-              <div>
-                <span class="side_bar-filter">Filter:</span>
-              </div>
-            </li>
-          </ul>
-          <ul class="side_bar-filter-brand">
-            <li>
-              <div class="side_bar-checkbox-header">
-                <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> Brand
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> Brand
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> Brand
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> Brand
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> Brand
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="side_bar-checkbox-subheader">
-                <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> Brand
-                </label>
-              </div>
-            </li>
-          </ul>
-
-      <ul class="side_bar-filter-status">
-        <li>
-          <div class="side_bar-checkbox-header">
-            <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> Status
-                </label>
-          </div>
-        </li>
-        <li>
-          <div class="side_bar-checkbox-subheader">
-            <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
-                </label>
-          </div>
-        </li>
-        <li>
-          <div class="side_bar-checkbox-subheader">
-            <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
-                </label>
-          </div>
-        </li>
-        <li>
-          <div class="side_bar-checkbox-subheader">
-            <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
-                </label>
-          </div>
-        </li>
-        <li>
-          <div class="side_bar-checkbox-subheader">
-            <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
-                </label>
-          </div>
-        </li>
-        <li>
-          <div class="side_bar-checkbox-subheader">
-            <label class="side_bar-checkbox-label">
-                  <input class="" type="checkbox" id="inlineCheckbox1" value="option1"> status
-                </label>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>  -->
-
       <div class="col-md-10">
         <div class="brand_content_section">
           <div class="brand_content_section--header">
-            <p class="brand_content_section-name">Projekte </p>
-
-            <button class="brand_content_section-createbtn" type="button" name="button">
-              <a href="/project/project-create"><label>Neues Projekt erstellen <i class="zmdi zmdi-plus-circle"></i></label></a>
-            </button>
+            <p class="brand_content_section-name">Projekt Übersicht</p>
+            <button (click)="createProjectLink()"  type="button" name="createProjectBtn">Neues Projekt erstellen <i class="zmdi zmdi-plus-circle"></i></button>
           </div>
-
           <div *ngFor="let project of projects" class="brand_content_section--list-data">
             <div class="content_section_list">
               <div class="content_section_list--date">
                 <div class="project_description">
                   <label class="project_description-header">{{project.title}}</label>
                   <div class="project_description_list">
-
                     <label>Project Nr:</label>
                     <span>{{project.id}}</span>
                   </div>
@@ -149,14 +43,8 @@
                 </div>
               </div>
               <div class="content_section_list--meter">
-                <!-- <div class="content_section_list--meterdiagram">
-                  <img src="../../assets/images/meter.png" width="165px" alt="meter">
-                </div> -->
                 <div class="content_section_list-version">
-                  <button id="open_project" class="brand_content_section-createbtn" type="button" name="button">
-                    <a href="/project/project-single/{{project.id}}"><label>Projekt öffnen</label></a>
-                    <i class="zmdi zmdi-caret-right"></i>
-                  </button>
+                    <button (click)="openProjectDetails(project.id)" type="button" name="openProjectDetails">Projekt Details <i class="zmdi zmdi-caret-right"></i></button>
                 </div>
               </div>
             </div>

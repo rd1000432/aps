@@ -19,12 +19,14 @@
   width: 50%;
 }
 
-.vf {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-}
-
 .container-fluid {
   padding: 130px 0;
+}
+
+form {
+  margin-top: 28%; 
+}
+
+.form-control {
+  width: 80%;
 }

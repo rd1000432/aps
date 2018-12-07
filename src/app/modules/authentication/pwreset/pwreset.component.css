@@ -28,3 +28,19 @@
 .container-fluid {
   padding: 130px 0;
 }
+
+.form-control {
+  width: 80%;
+}
+
+form {
+  margin-top: 12%;
+}
+
+.vf {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: black;
+  font-size: 18px;
+}

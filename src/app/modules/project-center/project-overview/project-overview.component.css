@@ -50,6 +50,12 @@ ul {
 
 .brand_content_section-name {
   font-size: 22px;
+  margin-top: 22px;
+}
+
+.brand_content_section--header {
+  padding-left: 90px;
+  padding-right: 72px;
 }
 
 .brand_content_section--header, .brand_content_section--buttons {
@@ -81,7 +87,6 @@ ul {
 
 .brand_content_section--list-data {
   height: auto;
-  overflow-y: scroll;
   background-color: #ffffff;
 }
 

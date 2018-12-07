@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { Project } from './project';
 
 const httpOptions = {
@@ -25,7 +23,6 @@ export class ProjectDataService {
   protected show_single_project_url: string = 'http://localhost/rest-it/public/api/project-data/project/';
   protected show_types_url: string = 'http://localhost/rest-it/public/api/project-data/get_types';
   protected get_tags_url: string = 'http://localhost/rest-it/public/api/project-data/tags/';
-  private types: any;
 
   constructor(private http: HttpClient) { }
 
@@ -49,8 +46,9 @@ export class ProjectDataService {
     return this.http.post<Project>(this.create_project_url, project, httpOptions)
   }
 
-  uploadFile(project: Project): Observable<Project> {
-    return this.http.post<Project>(this.upload_file_url, project, httpOptions)
+
+  uploadFile(formData: any) {
+    return this.http.post(this.upload_file_url, formData)
   }
 
   deleteProject(project: Project): Observable<Project> {

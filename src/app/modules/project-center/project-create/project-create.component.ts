@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { ProjectDataService } from 'src/app/project-data.service';
 import { Type } from 'src/app/type';
@@ -17,6 +17,14 @@ export class ProjectCreateComponent implements OnInit {
   private newtypename: any;
   private placeholder_for_dropdown: any;
   private fieldreq: string = "Dieses Feld ist notwendig.";
+  private mtitle: boolean = false;
+  private minit: boolean = false;
+  private mend: boolean = false;
+  private mmanager: boolean = false;
+  private mtype: boolean = false;
+  private mmessage: boolean = false;
+
+  private formData = new FormData();
 
   constructor(private projectDataService: ProjectDataService, private router: Router) {
     this.tags = new Array();
@@ -28,9 +36,18 @@ export class ProjectCreateComponent implements OnInit {
   }
 
   createProject() {
+    /* Rote Farbe für Labels */
+    if (this.newProject.title === undefined || this.newProject.title === "") { this.mtitle = true; } else { this.mtitle = false }
+    if (this.newProject.init_date === undefined || this.newProject.init_date === "") { this.minit = true; } else { this.minit = false }
+    if (this.newProject.end_date === undefined || this.newProject.end_date === "") { this.mend = true; } else { this.mend = false }
+    if (this.newProject.manager === undefined || this.newProject.manager === "") { this.mmanager = true; } else { this.mmanager = false }
+    if (this.newProject.type_id === undefined || this.newProject.type_id === "") { this.mtype = true; } else { this.mtype = false }
+
     console.log(this.newProject.type_id);
     if (this.newProject.title != undefined && this.newProject.init_date != undefined && this.newProject.end_date != undefined
-      && this.newProject.manager != undefined && this.newProject.type_id != undefined && this.newProject.init_date != "" && this.newProject.end_date != "") {
+      && this.newProject.manager != undefined && this.newProject.type_id != undefined && this.newProject.init_date != ""
+      && this.newProject.end_date != "" && this.newProject.manager != "" && this.newProject.type_id != "" && this.newProject.title != "") {
+      this.mmessage = false;
       console.log("works");
       console.log(this.newProject.end_date);
 
@@ -40,7 +57,7 @@ export class ProjectCreateComponent implements OnInit {
         this.tags = new Array();
         let temporaryTags = this.tags;
 
-        $('.bootstrap-tagsinput .label-info').each(function() {
+        $('.bootstrap-tagsinput .label-info').each(function () {
           temporaryTags.push($(this).text());
         });
 
@@ -69,6 +86,13 @@ export class ProjectCreateComponent implements OnInit {
           }
         }
       }
+      // Projekt-Bild uploaden
+      this.projectDataService.uploadFile(this.formData).subscribe(
+        (response) => { console.log(response); },
+        error => {
+          console.log("Picture could not be uploaded");
+        }
+        );
 
       // Projekt absenden
       this.projectDataService.createProject(this.newProject).subscribe(result => {
@@ -79,8 +103,25 @@ export class ProjectCreateComponent implements OnInit {
           console.log("Project could not be created");
         }
       );
+
+
     } else {
       console.log("field is missing");
+      this.mmessage = true;
     }
   }
+
+  uploadFile(event) {
+    let elem = event.target;
+
+    if (elem.files.length > 0) {
+      this.formData.append('pdf', elem.files[0]);
+      this.formData.append('name', elem.files[0].name);
+
+   /*    this.projectDataService.uploadFile(this.formData).subscribe(
+        (response) => { console.log(response); }); */
+    }
+    /* elem.value = ""; */
+  }
+
 }

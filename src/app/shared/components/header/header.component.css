@@ -3,3 +3,19 @@
   top: 0;
   right: 0;
 }
+
+.neuherz-logo {
+  display: block;
+  width: 70%;
+  position: absolute;
+  right: 16%;
+  bottom: 2rem;
+}
+
+.sidebar-nav > ul > li.active > a {
+  border-left: 3px solid #be1521;
+}
+
+.sidebar-nav ul li a {
+  font-size: 14px;
+}

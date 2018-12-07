@@ -10,4 +10,6 @@ import { RouterModule, Routes, Router } from "@angular/router";
 })
 export class HeaderComponent {
   public edited = true;
+
+  constructor (private router: Router) {  }
 }

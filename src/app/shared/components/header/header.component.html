@@ -4,13 +4,12 @@
       <!-- ============================================================== -->
       <!-- Logo -->
       <!-- ============================================================== -->
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">
-          <!-- Logo icon -->
+      <div class="navbar-header" style="position: fixed;">
+      <a class="navbar-brand" href="index.html">      
           <b>
             <img class="dark-logo" src="../assets/images/logo.png" width="70%" />
           </b>
-        </a>
+        </a> 
       </div>
       <!-- ============================================================== -->
       <!-- End Logo -->
@@ -28,6 +27,19 @@
             <form class="app-search">
               <input type="text" class="form-control" placeholder="Search for..."> <a class="srh-btn"><i class="ti-search"></i></a> </form>
           </li> -->
+          <!-- <li>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </li> -->
+          <li class="nav-item">
+              <div class="switch">
+                  <label>
+                      <i class="icon-sun pr-1"></i><input class="theme-switch notxtselect hide" type="checkbox" checked="checked"><span class="lever"></span><i class="icon-moon pl-1"></i>
+                  </label>
+              </div>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic"></a>
             <div class="dropdown-menu dropdown-menu-right animated flipInY">
@@ -74,6 +86,7 @@
   </header>
 
   <aside class="left-sidebar" *ngIf="edited">
+
     <!-- Sidebar scroll-->
     <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
       <div class="scroll-sidebar" style="overflow: hidden; width: auto; height: 100%;">
@@ -96,14 +109,16 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav active">
           <ul id="sidebarnav" class="in">
-            <li class="nav-small-cap">PERSONAL</li>
+           <!--  <li class="nav-small-cap">PERSONAL</li> -->
+           <!-- <span> class="label label-rounded label-success">5</span> 
+          <i class="mdi mdi-gauge"></i>-->
             <li class="active">
-              <a class="has-arrow" href="#" aria-expanded="false" [routerLink]="['/dashboard']"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard<span class="label label-rounded label-success">5</span></span></a>
+              <a class="has-arrow" href="#" aria-expanded="false" [routerLink]="['/dashboard']"><span class="hide-menu dashboard">Dashboard</span></a>
               <ul aria-expanded="true" class="collapse in">
-                <li class="active"><a href="#" class="active" [routerLink]="['/project/project-overview']">Projekt Übersicht</a></li>
-                <li><a href="#" [routerLink]="['/project/project-create']">Neues Projekt erstellen</a></li>
-                <li><a href="#" [routerLink]="['/project/project-search']">Nach Projekt suchen</a></li>
-                <li><a href="#" [routerLink]="['/commenter']">Commenter</a></li>
+                <li><a [ngClass]="router.url === '/project/project-overview' ? 'active': ''" [routerLink]="['/project/project-overview']">Projekt Übersicht</a></li>
+                <li><a [ngClass]="router.url === '/project/project-create' ? 'active': ''" [routerLink]="['/project/project-create']">Neues Projekt erstellen</a></li>
+                <li><a [ngClass]="router.url === '/project/project-search' ? 'active': ''" [routerLink]="['/project/project-search']">Nach Projekt suchen</a></li>
+                <li><a  [routerLink]="['/commenter']">Commenter</a></li>
               </ul>
             </li>
             <!--
@@ -200,12 +215,14 @@
             -->
           </ul>
         </nav>
+        
         <!-- End Sidebar navigation -->
       </div>
       <div class="slimScrollBar" style="background: rgb(220, 220, 220); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; left: 1px; height: 1096.34px;"></div>
       <div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; left: 1px;"></div>
     </div>
     <!-- End Sidebar scroll-->
+    <a href="https://www.neuherz.at/de/" target="_blank"><img class="neuherz-logo" src="../assets/images/NP_Logo_2018_final_quer.png" /></a>
 
   </aside>
 

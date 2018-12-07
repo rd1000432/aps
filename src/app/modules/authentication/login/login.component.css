@@ -18,3 +18,17 @@
   margin-bottom: 1rem;
   width: 50%;
 }
+
+#checkbox-signup {
+  position: absolute;
+  top: 15%;
+}
+
+#rememberlogin {
+  position: relative;
+}
+
+#rememberlogin>label {
+  display: inline-block;
+  margin-right: 0.5rem;
+}

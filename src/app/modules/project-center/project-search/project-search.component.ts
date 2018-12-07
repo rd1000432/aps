@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Project } from 'src/app/project';
 
@@ -13,7 +13,10 @@ export class ProjectSearchComponent implements OnInit {
   private projects: any;
   private searchresults: any;
   private searchvalue: any;
-  private results: boolean = true;
+  private results: boolean = false;
+  private noresults: boolean = false;
+  private invalidsearch: boolean = false;
+  private counter: number = 0;
 
   constructor(private projectDataService: ProjectDataService, private router: Router) {
     this.searchresults = [];
@@ -25,24 +28,35 @@ export class ProjectSearchComponent implements OnInit {
       
 
   search() {
+    this.noresults = false;
+    this.invalidsearch = false;
     this.searchresults = [];
     console.log(this.searchvalue);
-    if (this.searchvalue != "") {
-      for (let project of this.projects) {
+    this.counter = 0;
+    if (this.searchvalue != "" && this.searchvalue != null) {
+      for (let project of this.projects) {        
         if (this.searchvalue == project.title) {
           console.log("Titel stimmt überein");
           this.searchresults.push(project);
           console.log(this.searchresults);
-          this.results = false;
-
+          this.results = true;
+          this.counter++;
         } else if (this.searchvalue == project.id) {
           console.log("Nummer stimmt überein");
           this.searchresults.push(project);
-          this.results = false;
-        } else {
-          console.log("Nichts gefunden");
+          this.results = true;
+          this.counter++;
+        } else if (this.counter === 0) {
+            console.log("Nichts gefunden");
+            this.results = false;
+            this.noresults = true;
+          }
         }
+      }
+      else {
+        this.results = false;
+        this.invalidsearch = true;
       }
     }
   }
-}
+
