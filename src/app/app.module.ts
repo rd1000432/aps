@@ -30,6 +30,7 @@ import { CheckmailComponent } from './modules/authentication/checkmail/checkmail
 import { CheckverificationmailComponent } from './modules/authentication/checkverificationmail/checkverificationmail.component';
 import { DialogComponentComponent } from './modules/dialog-component/dialog-component.component';
 
+
 @NgModule({
   declarations: [
     LoginComponent,

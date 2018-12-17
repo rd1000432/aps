@@ -1,3 +1,25 @@
+.box-title {
+   color: #be1521;
+   font-weight: 300;
+   font-size: 22px;
+}
+
+ul {
+  list-style-type: none;
+  color: #be1521 !important;
+}
+ul li:before {
+  font-family: 'FontAwesome';
+  content: "\f15b";
+  color: #be1521;
+  margin-right: 0.3rem;
+}
+
+ul li a {
+  padding: 0;
+}
+
+
 #input-file-now {
   display: inline-block;
   width: auto;
@@ -45,9 +67,6 @@
   font-weight: normal;
 }
 
-ul {
-  list-style: none;
-}
 
 /* ul li:before {
     content: '✓';
@@ -192,19 +211,32 @@ ul {
   width: 90%;
 }
 
-/* .card-outline-info .card-header {
-  background-color: #328638;
-  border: none;
+.card-outline-info .card-header  p {
+  color:rgb(84, 102, 122) !important;
+  font-size: 22px !important;
+  position: absolute;
+  left: 34%;
 }
 
-.btn-success {
-  background-color: #328638;
-} */
+.card-outline-info .card-header  button {
+  position: absolute;
+  right: 10%;
+  top: 5.5%;
+}
 
-.card-outline-info .card-header {
+.card-outline-info .card-header  {
   background: white;
   border-color: white;
-  color: black;
+  color:rgb(84, 102, 122) !important;
+  font-size: 22px !important;  
+  margin-top: 48px;
+  left: 40%;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #show-btn {
@@ -222,8 +254,4 @@ label.control-label {
 
 #editbtn {
   margin-right: 1rem;
-}
-
-#delbtn {
-  margin-left: 1rem;
 }

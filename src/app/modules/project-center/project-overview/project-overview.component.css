@@ -1,3 +1,56 @@
+/* Benutzer CSS */
+.content_section_list-version button {
+  width: 133px !important;
+}
+
+
+.project_description-header {
+    padding-left: 5%;
+    width: 30%;
+    color: #be1521;
+}
+
+@media (max-width: 1010px)
+{
+  .project_description-header {    
+    width: 64%;
+}
+}
+
+.overviewrow {
+  margin-bottom: 2rem;
+}
+
+.brand_content_section--header {
+  margin-bottom: 4rem !important;
+}
+
+.brand_content_section-name {
+  position: absolute;
+  left: 40%;
+}
+
+.createproject
+{
+  margin-top: 10px;
+  position: absolute;
+  right: 10%;
+}
+
+/* content section of brands */
+.content_section_list {
+  display: flex;
+  justify-content: space-between;
+  padding: 73px 13px 13px 13px;
+  /* align-items: center; */
+}
+
+.firstsection{
+  padding: 73px 13px 13px 73px !important;
+}
+
+/* ============================================================================================= */
+
 #open_project {
   margin-left: 0 !important;
 }
@@ -45,7 +98,7 @@ ul {
     content: '✓';
   } */
 .brand_content_section {
-  padding: 26px 15px;
+  padding: 26px 15px 26px 73px;
 }
 
 .brand_content_section-name {
@@ -90,13 +143,7 @@ ul {
   background-color: #ffffff;
 }
 
-/* content section of brands */
-.content_section_list {
-  display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
-  padding: 73px;
-}
+
 
 .content_section_list--date {
   display: flex;

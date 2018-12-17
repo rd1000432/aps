@@ -1,6 +1,11 @@
 .form_heading {
   font-size: 22px;
-  margin-top: 30px;
+  margin-top: 48px;
+  font-weight: 300 !important;
+  color:rgb(84, 102, 122) !important;
+  font-size: 22px !important;  
+  position: absolute;
+  left: 37.5%;
 }
 
 .btn-wrapper {
@@ -18,16 +23,9 @@
   font-size: 18px;
 }
 
-/* #create_btn {
-  background-color: #328638;
-} */
 .col-md-12 {
   margin-left: 2rem;
 }
-
-/* #titel-input::placeholder {
-  color: red;
-} */
 
 .missing {
   color:red;
@@ -37,4 +35,15 @@
 #picture-input {
   top: 25%;
   position: absolute;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.posrel {
+  height: 100px;
+  position: relative;
 }

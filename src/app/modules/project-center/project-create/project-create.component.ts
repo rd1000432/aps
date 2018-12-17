@@ -15,6 +15,7 @@ export class ProjectCreateComponent implements OnInit {
   private newProject: any;
   private tags: any;
   private newtypename: any;
+  private picturename: any;
   private placeholder_for_dropdown: any;
   private fieldreq: string = "Dieses Feld ist notwendig.";
   private mtitle: boolean = false;
@@ -48,9 +49,6 @@ export class ProjectCreateComponent implements OnInit {
       && this.newProject.manager != undefined && this.newProject.type_id != undefined && this.newProject.init_date != ""
       && this.newProject.end_date != "" && this.newProject.manager != "" && this.newProject.type_id != "" && this.newProject.title != "") {
       this.mmessage = false;
-      console.log("works");
-      console.log(this.newProject.end_date);
-
       // Tags-Logik
       if ($('.bootstrap-tagsinput').find('.label-info').length !== 0) {
 
@@ -87,17 +85,22 @@ export class ProjectCreateComponent implements OnInit {
         }
       }
       // Projekt-Bild uploaden
-      this.projectDataService.uploadFile(this.formData).subscribe(
-        (response) => { console.log(response); },
-        error => {
-          console.log("Picture could not be uploaded");
-        }
+      if (this.formData.has('pdf') && this.formData.has('name')) {
+
+
+        this.projectDataService.uploadFile(this.formData).subscribe(
+          (response) => { console.log(response); },
+          error => {
+            console.log("Picture could not be uploaded");
+          }
         );
+        this.newProject.picture = this.picturename;
+      }
 
       // Projekt absenden
       this.projectDataService.createProject(this.newProject).subscribe(result => {
         console.log(result);
-        this.router.navigate(['/project/project-single/' + result['success']]);
+        this.router.navigate(['/project/project-single/' + result['Projekt-ID:']]);
       },
         error => {
           console.log("Project could not be created");
@@ -117,11 +120,15 @@ export class ProjectCreateComponent implements OnInit {
     if (elem.files.length > 0) {
       this.formData.append('pdf', elem.files[0]);
       this.formData.append('name', elem.files[0].name);
-
-   /*    this.projectDataService.uploadFile(this.formData).subscribe(
-        (response) => { console.log(response); }); */
+      this.picturename = elem.files[0].name;
     }
-    /* elem.value = ""; */
+  }
+
+  closetype(){
+    this.newProject.type_id = "";
+  }
+  deletepic(){
+    this.newProject.type_id = "";
   }
 
 }

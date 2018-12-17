@@ -10,6 +10,12 @@ const httpOptions = {
   })
 };
 
+const httpOptions2 = {
+  headers: new HttpHeaders({
+    'Content-Type': 'image/png'
+  })
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +29,7 @@ export class ProjectDataService {
   protected show_single_project_url: string = 'http://localhost/rest-it/public/api/project-data/project/';
   protected show_types_url: string = 'http://localhost/rest-it/public/api/project-data/get_types';
   protected get_tags_url: string = 'http://localhost/rest-it/public/api/project-data/tags/';
+  protected get_files_url: string = 'http://localhost/rest-it/public/api/project-data/files/';
 
   constructor(private http: HttpClient) { }
 
@@ -36,6 +43,10 @@ export class ProjectDataService {
 
   getSingleTags($id) {
     return this.http.get(this.get_tags_url + $id);
+  }
+
+  getFiles($id) {
+    return this.http.get(this.get_files_url + $id, httpOptions2);
   }
 
   getAllProjects() {

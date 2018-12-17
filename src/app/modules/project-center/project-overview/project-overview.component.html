@@ -1,54 +1,73 @@
 <div class="row">
   <div class="col-md-12 projects_content_section">
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-12">
         <div class="brand_content_section">
           <div class="brand_content_section--header">
             <p class="brand_content_section-name">Projekt Übersicht</p>
-            <button (click)="createProjectLink()"  type="button" name="createProjectBtn">Neues Projekt erstellen <i class="zmdi zmdi-plus-circle"></i></button>
+            <button class="createproject" (click)="createProjectLink()" type="button" name="createProjectBtn">Neues Projekt erstellen <i
+                class="zmdi zmdi-plus-circle"></i></button>
           </div>
           <div *ngFor="let project of projects" class="brand_content_section--list-data">
-            <div class="content_section_list">
-              <div class="content_section_list--date">
-                <div class="project_description">
-                  <label class="project_description-header">{{project.title}}</label>
-                  <div class="project_description_list">
-                    <label>Project Nr:</label>
-                    <span>{{project.id}}</span>
+            <div class="row overviewrow">
+              <label class="project_description-header">{{project.title}}</label>
+              <div class=" content_section_list-border"></div>
+              <div class="col-md-3">
+                  <div class="content_section_list firstsection">
+                <img src="{{project.picture}}" alt="Projekt-Bild">
                   </div>
-                  <div class="project_description_list">
-                    <label>Start-Datum:</label>
-                    <span>{{project.init_date}}</span>
+              </div>
+              <div class="col-md-3">
+                <div class="content_section_list">
+                  <div class="content_section_list--date">
+                    <div class="project_description">
+                      <div class="project_description_list">
+                        <label>Project Nr:</label>
+                        <span>{{project.id}}</span>
+                      </div>
+                      <div class="project_description_list">
+                        <label>Start-Datum:</label>
+                        <span>{{project.init_date}}</span>
+                      </div>
+                      <div class="project_description_list">
+                        <label>End-Datum:</label>
+                        <span>{{project.end_date}}</span>
+                      </div>
+                      <div class="project_description_list">
+                        <label>Organisation:</label>
+                        <span>{{project.organisation_name}}</span>
+                      </div>
+                      <div class="project_description_list">
+                        <label>Projekt-Manager:</label>
+                        <span>{{project.manager}}</span>
+                      </div>
+                      <div class="project_description_list">
+                        <label>Projekt-Typ:</label>
+                        <span>{{project.type_name}}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="project_description_list">
-                    <label>End-Datum:</label>
-                    <span>{{project.end_date}}</span>
-                  </div>
-                  <div class="project_description_list">
-                    <label>Beschreibung:</label>
-                    <span>{{project.description}}</span>
-                  </div>
-                  <div class="project_description_list">
-                    <label>Organisation:</label>
-                    <span>{{project.organisation_name}}</span>
-                  </div>
-                  <div class="project_description_list">
-                    <label>Projekt-Manager:</label>
-                    <span>{{project.manager}}</span>
-                  </div>
-                  <div class="project_description_list">
-                    <label>Projekt-Typ:</label>
-                    <span>{{project.type_name}}</span>
+                  <div class="content_section_list--meter">
+                   
                   </div>
                 </div>
               </div>
-              <div class="content_section_list--meter">
-                <div class="content_section_list-version">
-                    <button (click)="openProjectDetails(project.id)" type="button" name="openProjectDetails">Projekt Details <i class="zmdi zmdi-caret-right"></i></button>
+              <div class="col-md-5">
+                <div class="content_section_list">
+                  <div class="content_section_list--date">
+                    <div class="project_description_list">
+                      <label>Beschreibung:</label>
+                      <br>
+                      <br>
+                      <span>{{project.description}}</span>
+                    </div>
+                  </div>
+                  <div style="margin-left: 5rem;" class="content_section_list-version">
+                      <button (click)="openProjectDetails(project.id)" type="button" name="openProjectDetails">Projekt Details<i class="fas fa-info-circle"></i></button>
+                    </div>
                 </div>
               </div>
             </div>
-            <div class=" content_section_list-border"></div>
           </div>
         </div>
       </div>

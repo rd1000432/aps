@@ -41,7 +41,13 @@ export class ProjectSearchComponent implements OnInit {
           console.log(this.searchresults);
           this.results = true;
           this.counter++;
-        } else if (this.searchvalue == project.id) {
+        }else if (project.title.search(this.searchvalue) != -1) {
+          console.log("Titel stimmt überein");
+          this.searchresults.push(project.title);
+          console.log(this.searchresults);
+          this.results = true;
+          this.counter++;          
+        }else if (this.searchvalue == project.id) {
           console.log("Nummer stimmt überein");
           this.searchresults.push(project);
           this.results = true;

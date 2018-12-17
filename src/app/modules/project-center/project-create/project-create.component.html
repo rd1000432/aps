@@ -1,5 +1,7 @@
 <div class="col-md-12">
-  <p class="form_heading">Neues Projekt erstellen:</p>
+  <div class="row posrel clearfix">
+    <p class="form_heading">Neues Projekt erstellen:</p>
+  </div>
   <form class="form">
     <div class="form-group m-t-40 row">
       <label [ngClass]="mtitle === true ? 'missing': ''" for="titel-input" class="col-2 col-form-label">Titel*</label>
@@ -58,6 +60,9 @@
       <div class="col-10 col-md-6">
         <input id="new-type-input" class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Typen an"
           [(ngModel)]="newtypename">
+        <button style="margin-left: 1rem;" type="button" (click)="closetype()">
+          <i class="fas fa-times-circle"></i>
+        </button>
       </div>
     </div>
     <div class="form-group row">
@@ -66,6 +71,11 @@
         <!-- <input id="new-typ-input" class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Typen an" [(ngModel)]="newtypename"> -->
         <input (change)="uploadFile($event)" type="file" class="form-control-file" id="picture-input">
       </div>
+      <!--       <div class="col-10 col-md-4">
+        <button style="margin-left: 17rem;" type="button" (click)="deletepic()">
+          <i class="fas fa-times-circle"></i>
+        </button>
+      </div> -->
     </div>
     <div class="form-group row btn-wrapper">
       <p class="missing" *ngIf="mmessage === true">Bitte fülle die mit * makierten Felder aus.</p>
