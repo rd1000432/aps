@@ -19,6 +19,7 @@ import { ProjectOverviewComponent } from './modules/project-center/project-overv
 import { ProjectSingleComponent } from './modules/project-center/project-single/project-single.component';
 import { ProjectCreateComponent } from './modules/project-center/project-create/project-create.component';
 import { ProjectSearchComponent } from './modules/project-center/project-search/project-search.component';
+import { CommenterComponent } from "./modules/commenter/commenter.component";
 //import { CommenterComponent } from "./modules/commenter/commenter.component";
 
 const appRoutes: Routes = [
@@ -46,10 +47,11 @@ const appRoutes: Routes = [
         component: ProjectSingleComponent,
       },
       { path: "project-create", component: ProjectCreateComponent },
+      { path: "commenter/:id", component: CommenterComponent },
       { path: "project-search", component: ProjectSearchComponent }
     ]
   },
-  { path: "dashboard", component: DashboardComponent },
+  { path: "dashboard", component: DashboardComponent },  
   { path: "data-center", component: DataCenterComponent }
 ];
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 import { ProjectDataService } from 'src/app/project-data.service';
 import { Project } from 'src/app/project';
@@ -64,12 +64,17 @@ export class ProjectSingleComponent implements OnInit {
       formData.append("pdf", files[i]);
       formData.append("name", files[i]['name']);
       formData.append("id", this.id);
+      this.projects.file = files[i]['name'];
+      console.log(this.projects.file);
+      
     }
     this.projectDataService.uploadFile(formData).subscribe(result => {
       console.log(result);
     }
+   
     );
-    window.location.reload();
+    window.location.reload();  
+
 
 
   }
@@ -79,12 +84,20 @@ export class ProjectSingleComponent implements OnInit {
   }
 
   downloadfile() {
-  /*   this.projectDataService.getFiles(this.id).subscribe(
-    ); */
+    this.router.navigate(['project/commenter/' + this.id]);
+    /*this.projectDataService.getFiles(this.id).subscribe(); 
+    this.get_files_url = this.get_files_url + 1;    
+    this.pdfsrc = this.get_files_url; 
+     window.location.href = this.get_files_url; 
+     window.open(this.get_files_url); */
+  }
 
-    this.get_files_url = this.get_files_url + this.id;    
-    /* window.location.href = this.get_files_url; */
-    window.open(this.get_files_url);
+  deletefile() {
+    this.projectDataService.deleteFile(this.id).subscribe(result => {
+      console.log(result);
+      window.location.reload();
+    });
+    
   }
 
 }

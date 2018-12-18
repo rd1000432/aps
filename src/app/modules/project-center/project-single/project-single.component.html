@@ -126,7 +126,11 @@
                     <label>Dokuemente:</label>
                     <br>
                     <ul>
-                      <li><a (click)="downloadfile()" class="btn">{{project.file}}</a></li>
+                      <li>
+                      <a (click)="downloadfile()" class="btn">{{project.file}}</a>
+                      <a class="btn filemanipulation" style="margin-left: 2rem;" (click)="downloadfile()"><i class="fa fa-pencil"></i></a>
+                      <a class="btn filemanipulation" style="margin-left: .5rem;" (click)="deletefile()"> <i class="fa fa-trash-o"></i></a>                                
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -141,13 +145,7 @@
                       type="button">Hochladen <i class="fas fa-upload"></i> </button>
                   </div>
                 </div>
-              </div>
-<!--               <div *ngIf="pdfsrc != null" class="row">
-                <div class="col-md-12">              
-                    <embed src="{{pdfsrc}}" width="auto" height="auto">               
-                </div>
-              </div> -->
-              
+              </div>            
 
             </div>
             <div class="form-actions" style="margin-top: 3rem">
@@ -155,8 +153,8 @@
                 <div class="col-md-6">
                   <div class="row">
                     <div class="col-md-offset-3 col-md-9">
-                      <button (click)="toggle()" type="submit" id="editbtn" class="btn btn-info">Bearbeiten <i class="fa fa-pencil"></i></button>
-                      <button (click)="delete()" type="submit" id="delbtn" class="btn btn-danger">Löschen <i class="fa fa-trash-o"></i></button>
+                      <button (click)="toggle()" type="submit" id="editbtn" class="btn btn-info">Projekt bearbeiten <i class="fa fa-pencil"></i></button>
+                      <button (click)="delete()" type="submit" id="delbtn" class="btn btn-danger">Projekt löschen <i class="fa fa-trash-o"></i></button>
                     </div>
                   </div>
                 </div>

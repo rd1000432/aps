@@ -10,64 +10,64 @@ const httpOptions = {
   })
 };
 
-const httpOptions2 = {
-  headers: new HttpHeaders({
-    'Content-Type': 'image/png'
-  })
-};
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectDataService {
-  protected create_project_url: string = 'http://localhost/rest-it/public/api/project-data/create-project';
-  protected delete_project_url: string = 'http://localhost/rest-it/public/api/project-data/delete-project';
-  protected create_tag_url: string = 'http://localhost/rest-it/public/api/project-data/create-tag';
-  protected upload_file_url: string = 'http://localhost/rest-it/public/api/project-data/upload-file';
-  protected show_all_projects_url: string = 'http://localhost/rest-it/public/api/project-data/overview';
-  protected show_single_project_url: string = 'http://localhost/rest-it/public/api/project-data/project/';
-  protected show_types_url: string = 'http://localhost/rest-it/public/api/project-data/get_types';
-  protected get_tags_url: string = 'http://localhost/rest-it/public/api/project-data/tags/';
-  protected get_files_url: string = 'http://localhost/rest-it/public/api/project-data/files/';
+  protected project_base_url:string = 'http://localhost/rest-it/public/api/project-data/';
 
   constructor(private http: HttpClient) { }
 
   getTypes() {
-    return this.http.get(this.show_types_url);
+    return this.http.get(this.project_base_url + "get_types");
   }
 
   getSingleProject($id) {
-    return this.http.get(this.show_single_project_url + $id);
+    return this.http.get(this.project_base_url + "project/" + $id);
   }
 
   getSingleTags($id) {
-    return this.http.get(this.get_tags_url + $id);
+    return this.http.get(this.project_base_url + "tags/"+ $id);
   }
 
   getFiles($id) {
-    return this.http.get(this.get_files_url + $id, httpOptions2);
+    return this.http.get(this.project_base_url +"files/"+ $id, httpOptions);
+  }
+
+  deleteFile($id) {
+    return this.http.get(this.project_base_url +"delete-file/"+ $id, httpOptions);
   }
 
   getAllProjects() {
-    return this.http.get(this.show_all_projects_url);
+    return this.http.get(this.project_base_url + "overview");
+  }
+
+  getCommentsForProject($id) {
+    return this.http.get("http://localhost/rest-it/public/api/commenter/comment/" + $id);
+  }
+
+  deleteComment($id) {
+    return this.http.get("http://localhost/rest-it/public/api/commenter/delete-comment/" + $id);
   }
 
   createProject(project: Project): Observable<Project> {
-    return this.http.post<Project>(this.create_project_url, project, httpOptions)
+    return this.http.post<Project>(this.project_base_url + "create-project", project, httpOptions)
+  }
+  
+  createComment(project: Project): Observable<Project> {
+    return this.http.post<Project>("http://localhost/rest-it/public/api/commenter/" + "create-comment", project, httpOptions)
   }
 
-
   uploadFile(formData: any) {
-    return this.http.post(this.upload_file_url, formData)
+    return this.http.post(this.project_base_url + "upload-file", formData)
   }
 
   deleteProject(project: Project): Observable<Project> {
-    return this.http.post<Project>(this.delete_project_url, project, httpOptions)
+    return this.http.post<Project>(this.project_base_url + "delete-project", project, httpOptions)
   }
 
   createTags(project: Project): Observable<Project> {
-    return this.http.post<Project>(this.create_tag_url, project, httpOptions)
+    return this.http.post<Project>(this.project_base_url + "create-tags", project, httpOptions)
   }
 
 

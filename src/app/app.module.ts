@@ -29,6 +29,8 @@ import { AuthService } from './auth.service';
 import { CheckmailComponent } from './modules/authentication/checkmail/checkmail.component';
 import { CheckverificationmailComponent } from './modules/authentication/checkverificationmail/checkverificationmail.component';
 import { DialogComponentComponent } from './modules/dialog-component/dialog-component.component';
+import { CommenterComponent } from './modules/commenter/commenter.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { DialogComponentComponent } from './modules/dialog-component/dialog-comp
     PWResetComponent,
     CheckmailComponent,
     CheckverificationmailComponent,
-    DialogComponentComponent
+    DialogComponentComponent,
+    CommenterComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { DialogComponentComponent } from './modules/dialog-component/dialog-comp
     AppRoutingModule,
     ChartsModule,
     FormsModule,
-    ProjectCenterModule
+    ProjectCenterModule,
+    PdfViewerModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
