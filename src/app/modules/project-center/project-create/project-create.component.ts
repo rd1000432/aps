@@ -12,7 +12,9 @@ import { Type } from 'src/app/type';
 export class ProjectCreateComponent implements OnInit {
 
   private types: any;
+  private id: string;
   private newProject: any;
+  private imgurl: any;
   private tags: any;
   private newtypename: any;
   private picturename: any;
@@ -24,8 +26,7 @@ export class ProjectCreateComponent implements OnInit {
   private mmanager: boolean = false;
   private mtype: boolean = false;
   private mmessage: boolean = false;
-
-  private formData = new FormData();
+  private filesToUpload: Array<File> = [];
 
   constructor(private projectDataService: ProjectDataService, private router: Router) {
     this.tags = new Array();
@@ -44,7 +45,6 @@ export class ProjectCreateComponent implements OnInit {
     if (this.newProject.manager === undefined || this.newProject.manager === "") { this.mmanager = true; } else { this.mmanager = false }
     if (this.newProject.type_id === undefined || this.newProject.type_id === "") { this.mtype = true; } else { this.mtype = false }
 
-    console.log(this.newProject.type_id);
     if (this.newProject.title != undefined && this.newProject.init_date != undefined && this.newProject.end_date != undefined
       && this.newProject.manager != undefined && this.newProject.type_id != undefined && this.newProject.init_date != ""
       && this.newProject.end_date != "" && this.newProject.manager != "" && this.newProject.type_id != "" && this.newProject.title != "") {
@@ -84,23 +84,32 @@ export class ProjectCreateComponent implements OnInit {
           }
         }
       }
-      // Projekt-Bild uploaden
-      if (this.formData.has('pdf') && this.formData.has('name')) {
+      this.newProject.picture = this.picturename;
+      // Projekt absenden
+      this.projectDataService.createProject(this.newProject).subscribe(result => {
+        console.log(result['Projekt-ID:']);
+        this.id = String(result['Projekt-ID:']);
+        console.log(this.id);
+        // Projekt-Bild uploaden
+        const formData: any = new FormData();
+        const files: Array<File> = this.filesToUpload;
+        console.log(files);
+        for (let i = 0; i < files.length; i++) {
+          console.log(files[i]);
 
+          formData.append("pic", files[i]);
+          formData.append("name", files[i]['name']);
+          console.log(this.id);
 
-        this.projectDataService.uploadFile(this.formData).subscribe(
+          formData.append("id", this.id);
+        }
+        this.projectDataService.uploadPic(formData).subscribe(
           (response) => { console.log(response); },
           error => {
             console.log("Picture could not be uploaded");
           }
         );
-        this.newProject.picture = this.picturename;
-      }
-
-      // Projekt absenden
-      this.projectDataService.createProject(this.newProject).subscribe(result => {
-        console.log(result);
-        this.router.navigate(['/project/project-single/' + result['Projekt-ID:']]);
+       this.router.navigate(['/project/project-single/' + result['Projekt-ID:']]);
       },
         error => {
           console.log("Project could not be created");
@@ -112,22 +121,28 @@ export class ProjectCreateComponent implements OnInit {
       console.log("field is missing");
       this.mmessage = true;
     }
+
+  }
+  /* 
+    uploadFile(event) {
+      let elem = event.target;
+  
+      if (elem.files.length > 0) {
+        this.formData.append('pic', elem.files[0]);
+        this.formData.append('name', elem.files[0].name);
+        this.picturename = elem.files[0].name;
+        console.log();
+      }
+    } */
+
+  uploadFile(fileInput: any) {
+    this.filesToUpload = <Array<File>>fileInput.target.files;
   }
 
-  uploadFile(event) {
-    let elem = event.target;
-
-    if (elem.files.length > 0) {
-      this.formData.append('pdf', elem.files[0]);
-      this.formData.append('name', elem.files[0].name);
-      this.picturename = elem.files[0].name;
-    }
-  }
-
-  closetype(){
+  closetype() {
     this.newProject.type_id = "";
   }
-  deletepic(){
+  deletepic() {
     this.newProject.type_id = "";
   }
 

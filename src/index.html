@@ -28,7 +28,8 @@
   <link href="./assets/plugins/multiselect/css/multi-select.css" type="text/css" rel="stylesheet" />
 
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
   <link href="./assets/libs/method-draw.compiled.css" type="text/css" rel="stylesheet" />
@@ -37,11 +38,12 @@
 </head>
 
 <body class="fix-header card-no-border wysihtml5-supported">
-  
+
   <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <script src="./assets/plugins/jquery/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
   <script src="./assets/plugins/bootstrap/js/bootstrap.min.js"></script>
   <script src="./assets/plugins/dropify/dist/js/dropify.min.js"></script>
   <script src="./assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
@@ -52,6 +54,7 @@
   <script src="./assets/plugins/multiselect/js/jquery.multi-select.js"></script>
   <script src="./assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
   <script src="./assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+
   <app-root></app-root>
   <!-- <script>
     $(document).ready(function() {
@@ -96,7 +99,7 @@
     });
   </script> -->
   <script>
-    $(function() {
+    $(function () {
       /*panZoomInstance = svgPanZoom('#svg-id', {
         zoomEnabled: true,
         controlIconsEnabled: true,
@@ -117,18 +120,18 @@
       });*/
 
 
-      $(".button").click(function() {
+      $(".button").click(function () {
         $(this).toggleClass("active");
         $(".icons").toggleClass("open");
       });
 
       // this is for close icon when navigation open in mobile view
-      $(".nav-toggler").click(function() {
+      $(".nav-toggler").click(function () {
         $("body").toggleClass("show-sidebar");
         $(".nav-toggler i").toggleClass("ti-menu");
         $(".nav-toggler i").addClass("ti-close");
       });
-      $(".sidebartoggler").on('click', function() {
+      $(".sidebartoggler").on('click', function () {
         $(".sidebartoggler i").toggleClass("ti-menu");
       });
 
@@ -136,7 +139,7 @@
       // ==============================================================
       // This is for the top header part and sidebar part
       // ==============================================================
-      var set = function() {
+      var set = function () {
         var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
         var topOffset = 70;
         if (width < 1170) {

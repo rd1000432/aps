@@ -127,9 +127,9 @@
                     <br>
                     <ul>
                       <li>
-                      <a (click)="downloadfile()" class="btn">{{project.file}}</a>
-                      <a class="btn filemanipulation" style="margin-left: 2rem;" (click)="downloadfile()"><i class="fa fa-pencil"></i></a>
-                      <a class="btn filemanipulation" style="margin-left: .5rem;" (click)="deletefile()"> <i class="fa fa-trash-o"></i></a>                                
+                        <a (click)="downloadfile()" class="btn">{{project.file}}</a>
+                        <a class="btn filemanipulation" style="margin-left: 2rem;" (click)="downloadfile()"><i class="fa fa-pencil"></i></a>
+                        <a class="btn filemanipulation" style="margin-left: .5rem;" (click)="deletefile()"> <i class="fa fa-trash-o"></i></a>
                       </li>
                     </ul>
                   </div>
@@ -140,12 +140,13 @@
                   <div class="form-group">
                     <label for="input-file-now">Datei Hochladen:</label>
                     <br>
-                    <input (change)="cacheFile($event)" type="file" class="form-control-file" id="input-file-now" accept="application/pdf">
+                    <input (change)="cacheFile($event)" type="file" class="form-control-file" id="input-file-now"
+                      accept="application/pdf">
                     <button id="uploadbtn" (click)="uploadFile()" class="btn btn-success waves-effect waves-light m-r-10"
                       type="button">Hochladen <i class="fas fa-upload"></i> </button>
                   </div>
                 </div>
-              </div>            
+              </div>
 
             </div>
             <div class="form-actions" style="margin-top: 3rem">
@@ -153,8 +154,10 @@
                 <div class="col-md-6">
                   <div class="row">
                     <div class="col-md-offset-3 col-md-9">
-                      <button (click)="toggle()" type="submit" id="editbtn" class="btn btn-info">Projekt bearbeiten <i class="fa fa-pencil"></i></button>
-                      <button (click)="delete()" type="submit" id="delbtn" class="btn btn-danger">Projekt löschen <i class="fa fa-trash-o"></i></button>
+                      <button (click)="toggle()" type="submit" id="editbtn" class="btn btn-info">Projekt bearbeiten <i
+                          class="fa fa-pencil"></i></button>
+                      <button (click)="delete()" type="submit" id="delbtn" class="btn btn-danger">Projekt löschen <i
+                          class="fa fa-trash-o"></i></button>
                     </div>
                   </div>
                 </div>
@@ -206,12 +209,12 @@
             [(ngModel)]="project.manager">
         </div>
       </div>
-      <div class="form-group row">
+      <!--      <div class="form-group row">
         <label for="tags-input" class="col-2 col-form-label">Tags</label>
         <div class="col-10">
           <input class="form-control" type="text" name="tag" data-role="tagsinput" id="tags-input" placeholder="add tags">
         </div>
-      </div>
+      </div> -->
       <div class="form-group row">
         <label for="type_dropdown" class="col-2 col-form-label">Typ</label>
         <div class="col-10">
@@ -221,6 +224,12 @@
           </select>
         </div>
       </div>
+      <!--<div class="form-group row">
+        <label for="picture-input" class="col-2 col-form-label">Bild ändern</label>
+        <div class="col-10 col-md-6">
+          <input (change)="uploadFile($event)" type="file" class="form-control-file" id="picture-input">
+        </div>
+      </div> -->
       <div class="form-group row btn-wrapper">
         <button id="create_btn" type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="createProject()">Speichern</button>
         <button (click)="toggle()" type="button" class="btn btn-inverse"> <i class="fas fa-arrow-alt-circle-left"></i>

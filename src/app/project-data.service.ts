@@ -62,6 +62,14 @@ export class ProjectDataService {
     return this.http.post(this.project_base_url + "upload-file", formData)
   }
 
+  uploadPic(formData: any) {
+    return this.http.post(this.project_base_url + "upload-pic", formData)
+  }
+
+  getPic(project: Project): Observable<Project> {
+    return this.http.post<Project>(this.project_base_url +"project-picture", project, httpOptions);
+  }
+
   deleteProject(project: Project): Observable<Project> {
     return this.http.post<Project>(this.project_base_url + "delete-project", project, httpOptions)
   }
