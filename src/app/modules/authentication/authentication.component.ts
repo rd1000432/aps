@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule, Routes, Router } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-authentication',
@@ -8,9 +8,25 @@ import { RouterModule, Routes, Router } from "@angular/router";
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  iflogin: boolean = false; 
+  ifother: boolean = false;
+
+  constructor( public router: Router) {
+
+
+    if (this.router.url !== "/" &&  this.router.url !== "/auth") {      
+      this.iflogin = false;
+      this.ifother = true;
+    }
+
+    if (this.router.url === "/" || this.router.url === "/auth") {
+      this.iflogin = true;
+      this.ifother = false;
+    }
+   }
 
   ngOnInit() {
+ 
   }
 
 }

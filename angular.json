@@ -28,7 +28,7 @@
               "src/assets/main/css/colors/blue.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.slim.js",
+              "./node_modules/jquery/dist/jquery.js",
               "./node_modules/raphael/raphael.js",
               "./node_modules/morris.js/morris.js"
             ]

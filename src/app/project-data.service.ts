@@ -14,7 +14,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectDataService {
-  protected project_base_url:string = 'http://localhost/rest-it/public/api/project-data/';
+  protected project_base_url:string = 'https://approve-api.azurewebsites.net/api/project-data/';
+  protected commenter_base_url:string = 'https://approve-api.azurewebsites.net/api/commenter/';
 
   constructor(private http: HttpClient) { }
 
@@ -43,11 +44,11 @@ export class ProjectDataService {
   }
 
   getCommentsForProject($id) {
-    return this.http.get("http://localhost/rest-it/public/api/commenter/comment/" + $id);
+    return this.http.get(this.commenter_base_url + "comment/" + $id);
   }
 
   deleteComment($id) {
-    return this.http.get("http://localhost/rest-it/public/api/commenter/delete-comment/" + $id);
+    return this.http.get(this.commenter_base_url + "delete-comment/" + $id);
   }
 
   createProject(project: Project): Observable<Project> {
@@ -55,7 +56,7 @@ export class ProjectDataService {
   }
   
   createComment(project: Project): Observable<Project> {
-    return this.http.post<Project>("http://localhost/rest-it/public/api/commenter/" + "create-comment", project, httpOptions)
+    return this.http.post<Project>(this.commenter_base_url + "create-comment", project, httpOptions)
   }
 
   uploadFile(formData: any) {

@@ -10,10 +10,12 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent {
-  private user = {};
-  private response = {};
+  user: { email: string, password: string };
+  response = {};
   show: boolean = false;
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { 
+    this.user = { email: "", password: "" };
+  }
 
 
   onClick() {

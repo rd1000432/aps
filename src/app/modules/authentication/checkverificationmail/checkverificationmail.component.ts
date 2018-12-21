@@ -10,8 +10,8 @@ import { User } from 'src/app/user';
   styleUrls: ['./checkverificationmail.component.css']
 })
 export class CheckverificationmailComponent {
-  private user: { name: string, email: string, password: string, c_password: string };
-  private text: string;
+  user: { name: string, email: string, password: string, c_password: string };
+  text: string;
 
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) {
     this.user = { email: "", name: "", password: "", c_password: "" };

@@ -10,13 +10,13 @@ import { ProjectDataService } from 'src/app/project-data.service';
 })
 export class ProjectSearchComponent implements OnInit {
 
-  private projects: any;
-  private searchresults: any;
-  private searchvalue: any;
-  private results: boolean = false;
-  private noresults: boolean = false;
-  private invalidsearch: boolean = false;
-  private counter: number = 0;
+  projects: any;
+  searchresults: any;
+  searchvalue: any;
+  results: boolean = false;
+  noresults: boolean = false;
+  invalidsearch: boolean = false;
+  counter: number = 0;
 
   constructor(private projectDataService: ProjectDataService, private router: Router) {
     this.searchresults = [];

@@ -3,8 +3,8 @@
     <div class="login-box card">
       <div [ngStyle]="{'height':router.url === '/auth/register' ? '640px' : '500px' }" class="card-body">
         <img class="login-logo" src="../assets/images/logo.png" />
-        <router-outlet *ngIf="router.url !== '/' || router.url !== '/auth'"></router-outlet>
-        <app-login *ngIf="router.url === '/'|| router.url === '/auth'"></app-login>
+        <router-outlet *ngIf="ifother"></router-outlet>
+        <app-login *ngIf="iflogin"></app-login>
         <a href="https://www.neuherz.at/de/" target="_blank"><img class="neuherz-logo" src="../assets/images/NP_Logo_2018_final_quer.png" /></a>
       </div>
     </div>

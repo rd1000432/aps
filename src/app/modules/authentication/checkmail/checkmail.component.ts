@@ -10,8 +10,8 @@ import { User } from 'src/app/user';
   styleUrls: ['./checkmail.component.css']
 })
 export class CheckmailComponent {
-  private user: { email: string };
-  private text: string;
+  user: { email: string };
+  text: string;
 
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) {
     this.user = { email: "" };

@@ -11,22 +11,22 @@ import { Type } from 'src/app/type';
 
 export class ProjectCreateComponent implements OnInit {
 
-  private types: any;
-  private id: string;
-  private newProject: any;
-  private imgurl: any;
-  private tags: any;
-  private newtypename: any;
-  private picturename: any;
-  private placeholder_for_dropdown: any;
-  private fieldreq: string = "Dieses Feld ist notwendig.";
-  private mtitle: boolean = false;
-  private minit: boolean = false;
-  private mend: boolean = false;
-  private mmanager: boolean = false;
-  private mtype: boolean = false;
-  private mmessage: boolean = false;
-  private filesToUpload: Array<File> = [];
+  types: any;
+  id: string;
+  newProject: any;
+  imgurl: any;
+  tags: any;
+  newtypename: any;
+  picturename: any;
+  placeholder_for_dropdown: any;
+  fieldreq: string = "Dieses Feld ist notwendig.";
+  mtitle: boolean = false;
+  minit: boolean = false;
+  mend: boolean = false;
+  mmanager: boolean = false;
+  mtype: boolean = false;
+  mmessage: boolean = false;
+  filesToUpload: Array<File> = [];
 
   constructor(private projectDataService: ProjectDataService, private router: Router) {
     this.tags = new Array();

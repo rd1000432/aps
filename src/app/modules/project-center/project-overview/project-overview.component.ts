@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 })
 export class ProjectOverviewComponent implements OnInit {
 
-  private projects: any;
+  projects: any;
 
   constructor(private projectDataService: ProjectDataService, private router: Router) { }
 

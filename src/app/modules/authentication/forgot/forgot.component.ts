@@ -10,7 +10,7 @@ import { User } from 'src/app/user';
   styleUrls: ['./forgot.component.css']
 })
 export class ForgotComponent {
-  private user: { email: string };
+  user: { email: string };
   constructor(private authService: AuthService, private router: Router) {
     this.user = { email: "" };
   }

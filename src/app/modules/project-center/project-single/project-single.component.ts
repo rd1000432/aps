@@ -11,15 +11,15 @@ import { Type } from 'src/app/type';
 })
 export class ProjectSingleComponent implements OnInit {
 
-  private projects: any;
-  private tags: any;
-  private types: any;
-  private id: any;
-  private edit: boolean = true;
-  private file: any;
-  private filesToUpload: Array<File> = [];
-  private pdfsrc: any;
-  private get_files_url: string = 'http://localhost/rest-it/public/api/project-data/files/';
+  projects: any;
+  tags: any;
+  types: any;
+  id: any;
+  edit: boolean = true;
+  file: any;
+  filesToUpload: Array<File> = [];
+  pdfsrc: any;
+  get_files_url: string = 'https://approve-api.azurewebsites.net/api/project-data/files/';
 
   constructor(private projectDataService: ProjectDataService, private router: Router, private route: ActivatedRoute) {
   }

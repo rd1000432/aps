@@ -11,7 +11,7 @@ import { User } from 'src/app/user';
   styleUrls: ['./pwreset.component.css']
 })
 export class PWResetComponent {
-  private user: { newpw: string, newpw2: string, email: string, token: string };
+  user: { newpw: string, newpw2: string, email: string, token: string };
   show: boolean = false;
 
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) {

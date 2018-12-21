@@ -15,7 +15,7 @@ const httpOptions = {
 })
 
 export class AuthService {
-  protected auth_base_url:string = 'http://localhost/rest-it/public/api/authentification/';
+  protected auth_base_url:string = 'https://approve-api.azurewebsites.net/api/authentification/';
   constructor(private http: HttpClient) { }
 
   login(user: User): Observable<User> {

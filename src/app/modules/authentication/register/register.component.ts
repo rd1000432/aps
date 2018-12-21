@@ -10,7 +10,7 @@ import { User } from 'src/app/user';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  private user: { username: string, email: string, password: string, c_password: string };
+  user: { username: string, email: string, password: string, c_password: string };
   constructor(private authService: AuthService, private router: Router) {
     this.user = { email: "", username: "", password: "", c_password: "" };
   }
