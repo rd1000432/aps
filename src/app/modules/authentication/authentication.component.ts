@@ -7,14 +7,11 @@ import { Router } from "@angular/router";
   styleUrls: ['./authentication.component.css']
 })
 export class AuthenticationComponent implements OnInit {
-
   iflogin: boolean = false; 
   ifother: boolean = false;
 
   constructor( public router: Router) {
-
-
-    if (this.router.url !== "/" &&  this.router.url !== "/auth") {      
+    if (this.router.url !== "/" && this.router.url !== "/auth") {      
       this.iflogin = false;
       this.ifother = true;
     }
@@ -28,5 +25,4 @@ export class AuthenticationComponent implements OnInit {
   ngOnInit() {
  
   }
-
 }

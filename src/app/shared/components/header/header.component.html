@@ -112,84 +112,30 @@
            <!--  <li class="nav-small-cap">PERSONAL</li> -->
            <!-- <span> class="label label-rounded label-success">5</span> 
           <i class="mdi mdi-gauge"></i>-->
+            <li class="nav-devider"></li>
+            <li class="nav-small-cap">PROJECTS</li>
             <li class="active">
-              <a class="has-arrow" href="#" aria-expanded="false" [routerLink]="['/dashboard']"><span class="hide-menu dashboard">Dashboard</span></a>
+              <a class="has-arrow" href="#" aria-expanded="false" [routerLink]="['/dashboard']"><span class="hide-menu dashboard">Overview</span></a>
               <ul aria-expanded="true" class="collapse in">
-                <li><a [ngClass]="router.url === '/project/project-overview' ? 'active': ''" [routerLink]="['/project/project-overview']">Projekt Übersicht</a></li>
-                <li><a [ngClass]="router.url === '/project/project-create' ? 'active': ''" [routerLink]="['/project/project-create']">Neues Projekt erstellen</a></li>
-                <li><a [ngClass]="router.url === '/project/project-search' ? 'active': ''" [routerLink]="['/project/project-search']">Nach Projekt suchen</a></li>
-                <li><a [routerLink]="['/commenter/1']">Commenter</a></li>
+                <li><a [ngClass]="router.url === '/project/project-overview' ? 'active': ''" [routerLink]="['/project/project-overview']">Project Overview</a></li>
+                <li><a [ngClass]="router.url === '/project/project-create' ? 'active': ''" [routerLink]="['/project/project-create']">Create New Project</a></li>
+                <li><a [ngClass]="router.url === '/project/project-search' ? 'active': ''" [routerLink]="['/project/project-search']">Search Projects</a></li>
               </ul>
             </li>
             <!--
+            <li class="nav-devider"></li>
+            <li class="nav-small-cap">SUPPORT</li>
             <li class="active">
               <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
               <ul aria-expanded="true" class="collapse in">
                 <li class="active"><a href="#" class="active" [routerLink]="['/calendar']">Calendar</a></li>
                 <li><a href="#" [routerLink]="['/chat']">Chat app</a></li>
                 <li><a href="#" [routerLink]="['/support']">Support Ticket</a></li>
-                <li><a href="#" [routerLink]="['/contacts']">Contact / Employee</a></li>
                 <li><a href="#" [routerLink]="['/contact-grid']">Contact Grid</a></li>
-                <li><a href="#" [routerLink]="['/contact-detail']">Contact Detail</a></li>
-                <li><a href="#" [routerLink]="['/svg']">Commenter</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="has-arrow " href="#" aria-expanded="false" [routerLink]="['/messages']"><i class="mdi mdi-email"></i><span class="hide-menu">Messages</span></a>
-              <ul aria-expanded="false" class="collapse in">
-                <li><a href="#" [routerLink]="['/messages']">Mailbox</a></li>
-                <li><a href="#" [routerLink]="['/message-detail']">Mailbox Detail</a></li>
-                <li><a href="#" [routerLink]="['/message-compose']">Compose Mail</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Activity</span></a>
-              <ul aria-expanded="false" class="collapse">
-                <li><a href="ui-cards.html">Comments</a></li>
-                <li><a href="ui-user-card.html">Approvals</a></li>
-                <li><a href="ui-buttons.html">Infrastructure</a></li>
-              </ul>
-            </li>
-            <li class="nav-devider"></li>
-            <li class="nav-small-cap">COLLABORATION</li>
-            <li>
-              <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Organisation</span></a>
-              <ul aria-expanded="false" class="collapse">
-                <li><a href="form-basic.html">Hierarchy</a></li>
-                <li><a href="form-layout.html">Members</a></li>
-                <li><a href="form-addons.html">Workflow</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Clients</span></a>
-              <ul aria-expanded="false" class="collapse">
-                <li><a href="table-basic.html">Companies</a></li>
-                <li><a href="table-layout.html">Contacts</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-widgets"></i><span class="hide-menu">Suppliers</span></a>
-              <ul aria-expanded="false" class="collapse">
-                <li><a href="widget-apps.html">Overview</a></li>
-                <li><a href="widget-data.html">Request</a></li>
               </ul>
             </li>
             <li class="nav-devider"></li>
             <li class="nav-small-cap">DOCUMENTS</li>
-            <li>
-              <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-widgets"></i><span class="hide-menu">Artworks</span></a>
-              <ul aria-expanded="false" class="collapse">
-                <li><a href="widget-apps.html">Upload Artwork</a></li>
-                <li><a href="widget-data.html">Manage Artworks</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-widgets"></i><span class="hide-menu">Texts</span></a>
-              <ul aria-expanded="false" class="collapse">
-                <li><a href="widget-apps.html">Upload Text</a></li>
-                <li><a href="widget-data.html">Manage Texts</a></li>
-              </ul>
-            </li>
             <li>
               <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-widgets"></i><span class="hide-menu">Symbols</span></a>
               <ul aria-expanded="false" class="collapse">
@@ -203,13 +149,6 @@
               <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-book-multiple"></i><span class="hide-menu">Organisation</span></a>
               <ul aria-expanded="false" class="collapse in">
                 <li><a href="#" [routerLink]="['/data-center']">Data Center</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-file-chart"></i><span class="hide-menu">UI/UX</span></a>
-              <ul aria-expanded="false" class="collapse">
-                <li><a href="chart-morris.html">Morris Chart</a></li>
-                <li><a href="chart-chartist.html">Chartis Chart</a></li>
               </ul>
             </li>
             -->

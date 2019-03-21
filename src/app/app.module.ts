@@ -29,7 +29,6 @@ import { CheckverificationmailComponent } from './modules/authentication/checkve
 import { CommenterComponent } from './modules/commenter/commenter.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
-
 @NgModule({
   declarations: [
     LoginComponent,
