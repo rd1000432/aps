@@ -29,8 +29,7 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
-              "./node_modules/raphael/raphael.js",
-              "./node_modules/morris.js/morris.js"
+              "./node_modules/raphael/raphael.js"
             ]
           },
           "configurations": {
