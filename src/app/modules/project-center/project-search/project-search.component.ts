@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { Project } from 'src/app/project';
 
 import { ProjectDataService } from 'src/app/project-data.service';
+
 @Component({
   selector: 'app-project-search',
   templateUrl: './project-search.component.html',

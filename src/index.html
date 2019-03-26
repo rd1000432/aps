@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <base href="/">
-  <title>approveIT - Online Approval System</title>
+  <title>approveIT - Online Status Approval System</title>
 
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
@@ -21,7 +21,7 @@
   <!-- Custom CSS -->
   <link href="./assets/main/css/style.css" type="text/css" rel="stylesheet">
   <!-- You can change the theme colors from here -->
-  <link href="./assets/css/colors/blue.css" type="text/html" id="theme" rel="stylesheet">
+  <link href="./assets/css/colors/red.css" type="text/html" id="theme" rel="stylesheet">
 
   <!-- Form Addons -->
   <link href="./assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" type="text/css" rel="stylesheet" />
@@ -56,70 +56,8 @@
   <script src="./assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
 
   <app-root></app-root>
-  <!-- <script>
-    $(document).ready(function() {
-      // Basic
-      $('.dropify').dropify();
-
-      // Translated
-      $('.dropify-fr').dropify({
-        messages: {
-          default: 'Glissez-déposez un fichier ici ou cliquez',
-          replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
-          remove: 'Supprimer',
-          error: 'Désolé, le fichier trop volumineux'
-        }
-      });
-
-      // Used events
-      var drEvent = $('#input-file-events').dropify();
-
-      drEvent.on('dropify.beforeClear', function(event, element) {
-        return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-      });
-
-      drEvent.on('dropify.afterClear', function(event, element) {
-        alert('File deleted');
-      });
-
-      drEvent.on('dropify.errors', function(event, element) {
-        console.log('Has Errors');
-      });
-
-      var drDestroy = $('#input-file-to-destroy').dropify();
-      drDestroy = drDestroy.data('dropify')
-      $('#toggleDropify').on('click', function(e) {
-        e.preventDefault();
-        if (drDestroy.isDropified()) {
-          drDestroy.destroy();
-        } else {
-          drDestroy.init();
-        }
-      })
-    });
-  </script> -->
   <script>
     $(function () {
-      /*panZoomInstance = svgPanZoom('#svg-id', {
-        zoomEnabled: true,
-        controlIconsEnabled: true,
-        fit: true,
-        center: true,
-        minZoom: 0.1
-      });
-
-      zoom out
-      panZoomInstance.zoom(0.2)
-
-      $("#move").on("click", function() {
-        // Pan by any values from -80 to 80
-        panZoomInstance.panBy({
-          x: Math.round(Math.random() * 160 - 80),
-          y: Math.round(Math.random() * 160 - 80)
-        })
-      });*/
-
-
       $(".button").click(function () {
         $(this).toggleClass("active");
         $(".icons").toggleClass("open");

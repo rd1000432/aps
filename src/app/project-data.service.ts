@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
 import { Project } from './project';
 
 const httpOptions = {
@@ -14,8 +16,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectDataService {
-  protected project_base_url:string = 'https://approve-api.azurewebsites.net/api/project-data/';
-  protected commenter_base_url:string = 'https://approve-api.azurewebsites.net/api/commenter/';
+  protected project_base_url:string = environment.apiUrl + '/project-data/';
+  protected commenter_base_url:string = environment.apiUrl + '/api/commenter/';
 
   constructor(private http: HttpClient) { }
 

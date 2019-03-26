@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
+import { environment } from '../../../../environments/environment';
+
 import { ProjectDataService } from 'src/app/project-data.service';
 import { Project } from 'src/app/project';
 import { Type } from 'src/app/type';
@@ -10,7 +12,6 @@ import { Type } from 'src/app/type';
   styleUrls: ['./project-single.component.css']
 })
 export class ProjectSingleComponent implements OnInit {
-
   projects: any;
   tags: any;
   types: any;
@@ -19,7 +20,7 @@ export class ProjectSingleComponent implements OnInit {
   file: any;
   filesToUpload: Array<File> = [];
   pdfsrc: any;
-  get_files_url: string = 'https://approve-api.azurewebsites.net/api/project-data/files/';
+  get_files_url: string = environment.apiUrl + '/api/project-data/files/';
 
   constructor(private projectDataService: ProjectDataService, private router: Router, private route: ActivatedRoute) {
   }

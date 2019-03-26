@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 import { DomSanitizer } from '@angular/platform-browser';
+import { environment } from '../../../environments/environment';
+
 import { ProjectDataService } from 'src/app/project-data.service';
 import { Project } from 'src/app/project';
 
@@ -14,7 +16,7 @@ export class CommenterComponent implements OnInit, AfterViewInit {
 
 
   id: any;
-  file_url: string = 'https://approve-api.azurewebsites.net/api/project-data/files/';
+  file_url: string = environment.apiUrl + '/api/project-data/files/';
   comments: {};
   comment: string;
   commentadded: boolean = false;
@@ -124,7 +126,7 @@ export class CommenterComponent implements OnInit, AfterViewInit {
           commenttosend.ypos = (e.pageY - posY + 150);
           $.ajax({
             type: 'POST',
-            url: 'https://approve-api.azurewebsites.net/api/commenter/create-comment',
+            url: environment.apiUrl + '/api/commenter/create-comment',
             data: commenttosend,
             success: function () {
             }

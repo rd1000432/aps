@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './user';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,8 +16,7 @@ const httpOptions = {
 })
 
 export class AuthService {
-  //protected auth_base_url:string = 'https://approve-api.azurewebsites.net/api/authentification/';
-  protected auth_base_url:string = 'http://localhost/approve-it-api/public/api/authentification/';
+  protected auth_base_url:string = environment.apiUrl + '/api/authentification/';
   constructor(private http: HttpClient) { }
 
   login(user: User): Observable<User> {

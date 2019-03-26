@@ -13,10 +13,10 @@ export class LoginComponent {
   user: { email: string, password: string };
   response = {};
   show: boolean = false;
+
   constructor(private authService: AuthService, private router: Router) { 
     this.user = { email: "", password: "" };
   }
-
 
   onClick() {
     this.authService.login(this.user).subscribe(result => {
