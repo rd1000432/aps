@@ -23,9 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "src/assets/main/css/style.css",
-              "src/assets/main/css/colors/blue.css"
+              "src/assets/main/css/colors/red.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "approveit"
+  "defaultProject": "approveit",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

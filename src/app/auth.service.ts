@@ -16,7 +16,7 @@ const httpOptions = {
 })
 
 export class AuthService {
-  protected auth_base_url:string = environment.apiUrl + '/api/authentification/';
+  protected auth_base_url:string = environment.apiUrl + '/authentification/';
   constructor(private http: HttpClient) { }
 
   login(user: User): Observable<User> {
