@@ -41,26 +41,31 @@
               </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic"></a>
+            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic">
+            </a>
             <div class="dropdown-menu dropdown-menu-right animated flipInY">
               <ul class="dropdown-user">
                 <li>
                   <div class="dw-user-box">
-                    <div class="u-img"><img src="../assets/images/users/1.jpg" alt="user"></div>
+                    <div class="u-img">
+                      <img src="../assets/images/users/1.jpg" alt="user">
+                    </div>
                     <div class="u-text">
                       <h4>Martin Neuherz</h4>
-                      <p class="text-muted">martin.neuherz@neuherz.at</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                      <p class="text-muted">martin.neuherz@neuherz.at</p>
+                      <a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Profilansicht</a>
                     </div>
                   </div>
                 </li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                <li><a href="#"><i class="ti-user"></i> Profil</a></li>
                 <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-                <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                <li><a href="#"><i class="ti-email"></i> Nachrichten</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                <li><a href="#"><i class="ti-settings"></i> Einstellungen</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                <li><a href="#"><i class="fa fa-power-off"></i> Ausloggen</a></li>
               </ul>
             </div>
           </li>
@@ -97,11 +102,11 @@
           <!-- User profile text-->
           <div class="profile-text"> <a href="#" class="dropdown-toggle link u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Martin Neuherz <span class="caret"></span></a>
             <div class="dropdown-menu animated flipInY">
-              <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
+              <a href="#" class="dropdown-item"><i class="ti-user"></i> Profilverwaltung</a>
               <!-- <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a> -->
-              <a href="#" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
+              <a href="#" class="dropdown-item"><i class="ti-email"></i> Nachrichten</a>
               <!-- <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"><i class="ti-settings"></i> Account Settings</a>  -->
-              <div class="dropdown-divider"></div> <a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+              <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Ausloggen</a>
             </div>
           </div>
         </div>
@@ -113,13 +118,13 @@
            <!-- <span> class="label label-rounded label-success">5</span> 
           <i class="mdi mdi-gauge"></i>-->
             <li class="nav-devider"></li>
-            <li class="nav-small-cap">PROJECTS</li>
+            <li class="nav-small-cap">PROJEKTE</li>
             <li class="active">
-              <a class="has-arrow" href="#" aria-expanded="false" [routerLink]="['/dashboard']"><span class="hide-menu dashboard">Overview</span></a>
+              <a class="has-arrow" href="#" aria-expanded="false" [routerLink]="['/dashboard']"><span class="hide-menu dashboard">Übersicht</span></a>
               <ul aria-expanded="true" class="collapse in">
-                <li><a [ngClass]="router.url === '/project/project-overview' ? 'active': ''" [routerLink]="['/project/project-overview']">Project Overview</a></li>
-                <li><a [ngClass]="router.url === '/project/project-create' ? 'active': ''" [routerLink]="['/project/project-create']">Create New Project</a></li>
-                <li><a [ngClass]="router.url === '/project/project-search' ? 'active': ''" [routerLink]="['/project/project-search']">Search Projects</a></li>
+                <li><a [ngClass]="router.url === '/project/project-overview' ? 'active': ''" [routerLink]="['/project/project-overview']">Projektliste</a></li>
+                <li><a [ngClass]="router.url === '/project/project-create' ? 'active': ''" [routerLink]="['/project/project-create']">Neues Projekt anlegen</a></li>
+                <li><a [ngClass]="router.url === '/project/project-search' ? 'active': ''" [routerLink]="['/project/project-search']">Projekt suchen</a></li>
               </ul>
             </li>
             <!--
