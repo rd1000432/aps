@@ -1819,8 +1819,9 @@ File: scss
     display: none; }
 
 .page-wrapper {
-  background: #fff !important;
-  padding-bottom: 60px; }
+  background: #fff;
+  padding-bottom: 60px; 
+}
 
 .container-fluid {
   padding: 25px 30px; }

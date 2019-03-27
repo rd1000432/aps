@@ -64,6 +64,9 @@
   }
 }
 
+body {
+  font-size: .9rem;
+}
 /* =========page wrapper and card - center portion====== */
 .page-wrapper {
   background: #f2f4f8;
@@ -666,4 +669,16 @@ button>a>label:hover {
 
 span.dashboard {
   color: #be1521 !important;
+}
+ 
+.page-wrapper {
+  background-color: #f2f7f8 !important;
+}
+
+.card-outline-danger, .card-outline-info, .card-outline-warning, .card-outline-success, .card-outline-primary {
+  background: #fff;
+}
+
+.card-outline-theme .card-header {
+  background: #c02b36;
 }

@@ -3,38 +3,18 @@
   width: 133px !important;
 }
 
-
 .project_description-header {
-    padding-left: 5%;
-    width: 30%;
     color: #be1521;
 }
 
-@media (max-width: 1010px)
-{
+@media (max-width: 1010px) {
   .project_description-header {    
     width: 64%;
-}
-}
-
-.overviewrow {
-  margin-bottom: 2rem;
+  }
 }
 
 .brand_content_section--header {
-  margin-bottom: 4rem !important;
-}
-
-.brand_content_section-name {
-  position: absolute;
-  left: 40%;
-}
-
-.createproject
-{
-  margin-top: 10px;
-  position: absolute;
-  right: 10%;
+  justify-content: flex-end;
 }
 
 /* content section of brands */
@@ -43,10 +23,6 @@
   justify-content: space-between;
   padding: 73px 13px 13px 13px;
   /* align-items: center; */
-}
-
-.firstsection{
-  padding: 73px 13px 13px 73px !important;
 }
 
 /* ============================================================================================= */
@@ -58,10 +34,6 @@
 #open_project label {
   margin-bottom: 0 !important;
   margin-left: 1rem !important;
-}
-
-.projects_content_section {
-  padding: 0 !important;
 }
 
 .side_bar {
@@ -97,23 +69,14 @@ ul {
 /* ul li:before {
     content: '✓';
   } */
-.brand_content_section {
-  padding: 26px 15px 26px 73px;
-}
 
 .brand_content_section-name {
   font-size: 22px;
   margin-top: 22px;
 }
 
-.brand_content_section--header {
-  padding-left: 90px;
-  padding-right: 72px;
-}
-
 .brand_content_section--header, .brand_content_section--buttons {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
 }
 
@@ -239,13 +202,6 @@ ul {
   content: "  ";
   clear: both;
   display: block;
-}
-
-.content_section_list-border {
-  border-bottom: 1px solid #556679;
-  display: block;
-  margin: 0 auto;
-  width: 90%;
 }
 
 .brand_content_section-createbtn label {
