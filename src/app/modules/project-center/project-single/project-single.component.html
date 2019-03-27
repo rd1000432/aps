@@ -122,7 +122,7 @@
                               <br>
                               <ul>
                                 <li>
-                                  <a (click)="downloadfile()" class="btn">{{project.file}}</a>
+                                  <a (click)="downloadfile()" class="btn">{{ project.file }}</a>
                                   <a class="btn filemanipulation" style="margin-left: 2rem;" (click)="downloadfile()"><i class="fa fa-pencil"></i></a>
                                   <a class="btn filemanipulation" style="margin-left: .5rem;" (click)="deletefile()"> <i class="fa fa-trash-o"></i></a>
                                 </li>
@@ -135,28 +135,19 @@
                             <div class="form-group">
                               <label for="input-file-now">Datei Hochladen:</label>
                               <br>
-                              <input (change)="cacheFile($event)" type="file" class="form-control-file" id="input-file-now"
-                                accept="application/pdf">
-                              <button id="uploadbtn" (click)="uploadFile()" class="btn btn-success waves-effect waves-light m-r-10"
-                                type="button">Hochladen <i class="fas fa-upload"></i> </button>
+                              <input (change)="cacheFile($event)" type="file" class="form-control-file" id="input-file-now" accept="application/pdf">
+                              <button id="uploadbtn" (click)="uploadFile()" class="btn btn-success waves-effect waves-light" type="button">Hochladen <i class="fas fa-upload"></i> </button>
                             </div>
                           </div>
                         </div>
           
                       </div>
-                      <div class="form-actions" style="margin-top: 3rem">
+                      <div class="form-actions mt-2">
                         <div class="row">
-                          <div class="col-md-6">
-                            <div class="row">
-                              <div class="col-md-offset-3 col-md-9">
-                                <button (click)="toggle()" type="submit" id="editbtn" class="btn btn-info">Projekt bearbeiten <i
-                                    class="fa fa-pencil"></i></button>
-                                <button (click)="delete()" type="submit" id="delbtn" class="btn btn-danger">Projekt löschen <i
-                                    class="fa fa-trash-o"></i></button>
-                              </div>
-                            </div>
+                          <div class="col-md-8">
+                            <button (click)="toggle()" type="submit" id="editbtn" class="btn btn-info btn-hover mr-3">Projekt bearbeiten <i class="fa fa-pencil"></i></button>
+                            <button (click)="delete()" type="submit" id="delbtn" class="btn btn-danger btn-hover">Projekt löschen <i class="fa fa-trash-o"></i></button>
                           </div>
-                          <div class="col-md-6"> </div>
                         </div>
                       </div>
                     </form>
@@ -166,69 +157,75 @@
             </div>          
 
             <div *ngIf="!edit">
-                <div *ngFor="let project of projects" class="col-md-12">
-                  <form class="form">
-                    <div class="form-group m-t-40 row">
-                      <label for="titel-input" class="col-2 col-form-label">Titel</label>
-                      <div class="col-10">
-                        <input class="form-control" type="text" placeholder="Geben Sie den Titel für das neue Projekt ein." id="titel-input"
-                          value="title" name="title" [(ngModel)]="project.title">
+              <div *ngFor="let project of projects" class="col-md-12">
+                <form class="form-horizontal" role="form">
+                  <div class="form-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="titel-input" class="col-form-label">Titel</label>
+                          <input class="form-control" type="text" placeholder="Geben Sie den Titel für das neue Projekt ein." id="titel-input" value="title" name="title" [(ngModel)]="project.title">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="startdatum-input" class="col-form-label">Startdatum</label>
+                          <input class="form-control" name="init_date" type="date" id="startdatum-input" [(ngModel)]="project.init_date">
+                          </div>
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label for="startdatum-input" class="col-2 col-form-label">Startdatum</label>
-                      <div class="col-10">
-                        <input class="form-control" name="init_date" type="date" id="startdatum-input" [(ngModel)]="project.init_date">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="enddatum-input" class="col-form-label">Enddatum</label>
+                          <input class="form-control" name="end_date" type="date" id="enddatum-input" [(ngModel)]="project.end_date">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="Beschreibung-input" class="col-form-label">Beschreibung</label>
+                          <input class="form-control" name="description" type="text" placeholder="Geben Sie eine Beschreibung für das neue Projekt ein." id="Beschreibung-input" [(ngModel)]="project.description">
+                          </div>
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label for="enddatum-input" class="col-2 col-form-label">Enddatum</label>
-                      <div class="col-10">
-                        <input class="form-control" name="end_date" type="date" id="enddatum-input" [(ngModel)]="project.end_date">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="Manager-input" class="col-form-label">Projekt-Manager</label>
+                          <input class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Manager an" [(ngModel)]="project.manager">
+                        </div>  
+                      </div>
+                      <div class="col-md-6">
+                        <!-- <div class="form-group">
+                          <label for="tags-input" class="col-2 col-form-label">Tags</label>
+                          <div class="col-10">
+                            <input class="form-control" type="text" name="tag" data-role="tagsinput" id="tags-input" placeholder="add tags">
+                          </div>
+                        </div> -->
+                        <div class="form-group">
+                          <label for="type_dropdown" class="col-form-label">Typ</label>
+                          <select [(ngModel)]="project.type_id" class="form-control" name="type" id="type_dropdown">
+                            <option value="" disabled selected>---Wählen Sie den Typ des Projekts aus:---</option>
+                            <option *ngFor="let type of types" value={{type.id}}>{{type.name}}</option>
+                          </select>
+                        </div>                       
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label for="Beschreibung-input" class="col-2 col-form-label">Beschreibung</label>
-                      <div class="col-10">
-                        <input class="form-control" name="description" type="text" placeholder="Geben Sie eine Beschreibung für das neue Projekt ein."
-                          id="Beschreibung-input" [(ngModel)]="project.description">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="Manager-input" class="col-2 col-form-label">Projekt-Manager</label>
-                      <div class="col-10">
-                        <input class="form-control" name="manager" type="text" placeholder="Geben Sie den Projekt-Manager an"
-                          [(ngModel)]="project.manager">
-                      </div>
-                    </div>
-                    <!-- <div class="form-group row">
-                      <label for="tags-input" class="col-2 col-form-label">Tags</label>
-                      <div class="col-10">
-                        <input class="form-control" type="text" name="tag" data-role="tagsinput" id="tags-input" placeholder="add tags">
-                      </div>
-                    </div> -->
-                    <div class="form-group row">
-                      <label for="type_dropdown" class="col-2 col-form-label">Typ</label>
-                      <div class="col-10">
-                        <select [(ngModel)]="project.type_id" class="form-control" name="type" id="type_dropdown">
-                          <option value="" disabled selected>---Wählen Sie den Typ des Projekts aus:---</option>
-                          <option *ngFor="let type of types" value={{type.id}}>{{type.name}}</option>
-                        </select>
-                      </div>
-                    </div>
-                    <!--<div class="form-group row">
+
+                    <!--<div class="form-group">
                       <label for="picture-input" class="col-2 col-form-label">Bild ändern</label>
                       <div class="col-10 col-md-6">
                         <input (change)="uploadFile($event)" type="file" class="form-control-file" id="picture-input">
                       </div>
                     </div> -->
-                    <div class="form-group row btn-wrapper">
+                    <div class="form-group btn-wrapper">
                       <button id="create_btn" type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="createProject()">Speichern</button>
                       <button (click)="toggle()" type="button" class="btn btn-inverse"> <i class="fas fa-arrow-alt-circle-left"></i>
                         Abbrechen</button>
                     </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
+              </div>
               </div>
             </div>
           </div> <!-- CARD BODY -->

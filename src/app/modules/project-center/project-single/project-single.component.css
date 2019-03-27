@@ -1,7 +1,7 @@
 .box-title {
    color: #be1521;
    font-weight: 300;
-   font-size: 22px;
+   font-size: 20px;
 }
 
 ul {
@@ -249,8 +249,4 @@ ul li a {
 
 label.control-label {
   display: inline-block;
-}
-
-#editbtn {
-  margin-right: 1rem;
 }
